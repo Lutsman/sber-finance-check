@@ -1,5 +1,23 @@
-body {
+html {
   background: url("../images/bg_light.png") no-repeat center top $global-background;
+  font-family: $font-family-global;
+  font-size: $font-size-global;
+  font-weight: $font-weight-global;
+  color: $font-color-global;
+}
+
+h1 {
+  font-family: $font-family-global;
+  font-size: $font-size-h1;
+  font-weight: $font-weight-thin;
+  color: $font-color-global;
+}
+
+h2 {
+  font-family: $font-family-global;
+  font-size: $font-size-h2;
+  font-weight: $font-weight-global;
+  color: $font-color-global;
 }
 
 
@@ -10,19 +28,171 @@ body {
 }
 
 .uk-light {
-  color: #fff;
+  color: $font-color-default;
 }
 
+.uk-logo {
+  font-family: $font-family-global;
+  font-size: $font-size-global;
+  font-weight: $font-weight-global;
+  color: $font-color-muted;
+}
+
+.uk-text-lead {
+  padding-top: 10px;
+  font-size: 46px;
+  line-height: 1;
+}
+
+.uk-text-meta {
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.uk-text-small {
+  font-size: $font-size-small;
+}
+
+.uk-text-large {
+  font-size: $font-size-large;
+}
+
+.uk-text-bold {
+  font-weight: $font-weight-thick;
+}
+
+.uk-text-primary {
+  color: $font-color-primary!important;
+}
+
+.uk-text-muted {
+  color: $font-color-muted!important;
+}
+
+.uk-button {
+  height: 40px;
+  padding: 0 20px;
+  font-size: $font-size-small;
+  font-weight: $font-weight-global;
+  transition: .2s ease-in-out;
+  text-transform: none;
+}
+
+.uk-button-primary {
+  background-color: $global-background;
+  color: $font-color-default;
+  border: 1px solid transparent;
+  box-shadow: 0 15px 45px -12px $global-background;
+}
+
+.uk-button-primary:focus, .uk-button-primary:hover {
+  background-color: darken($global-background, 10%);
+  color: $font-color-default;
+}
+
+.uk-button-primary:disabled {
+  background-color: #dde7eb;
+  color: #c1cdd9;
+  border-color: #c1cdd9;
+  box-shadow: none;
+}
+
+.uk-button-default {
+  background-color: transparent;
+  color: #c1cdd9;
+  border: 1px solid #c1cdd9;
+
+  &.uk-light {
+    color: $font-color-default;
+    border: 1px solid $font-color-default;
+  }
+}
+
+.uk-button-default:focus, .uk-button-default:hover {
+  background-color: transparent;
+  color: #c1cdd9;
+}
+
+.uk-checkbox, .uk-radio {
+  width: 24px;
+  height: 24px;
+  border-radius: 0;
+}
+
+.uk-radio:checked {
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+  }
+
+.uk-checkbox:checked, .uk-checkbox:indeterminate, .uk-radio:checked, .uk-checkbox:checked:focus, .uk-checkbox:indeterminate:focus, .uk-radio:checked:focus {
+  background-color: $global-background;
+}
+
+.uk-checkbox:focus, .uk-radio:focus {
+  border-color: $global-background;
+}
+
+.uk-accordion {
+  li {
+    border: 1px solid #c1cdd9;
+    padding: 15px;
+    border-radius: 2px;
+  }
+}
+
+.uk-accordion-title {
+  font-size: $font-size-global;
+  color: $font-color-global;
+}
+
+.uk-accordion-title::before, .uk-open>.uk-accordion-title::before {
+  background-image: none;
+}
+
+.tm-good.uk-accordion-title::before {
+  background-image: url("/images/thumb-up.png");
+}
+
+.tm-bad.uk-accordion-title::before {
+  background-image: url("/images/thumb-down.png");
+}
+
+.tm-warning.uk-accordion-title::before {
+  background-image: url("/images/thumb-warn.png");
+}
+
+
+
+
+/* Theme global*/
+
+.tm-opacity-70 {
+  opacity: 0.7;
+}
+
+.tm-font-light {
+  font-weight: $font-weight-thin;
+}
+
+.tm-font-tiny {
+  font-size: $font-size-tiny;
+}
+
+.tm-border-rounded {
+  border-radius: 500px;
+}
+
+.tm-padding-tiny {
+  padding: 7px;
+}
 
 /* Sidebar */
 
 .tm-sidebar {
-  padding: 80px 50px 60px;
+  padding: 30px 50px 60px;
 }
 
 .tm-sidebar-title {
-  font-size: 18px;
-  font-weight: 700;
+  padding: 50px 0;
 }
 
 .tm-scale {
@@ -33,6 +203,10 @@ body {
   height: 200px;
   border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
+
+  .fa-play {
+    font-size: 30px;
+  }
 }
 
 .tm-scale-header {
@@ -50,7 +224,6 @@ body {
     background-color: rgba(255, 255, 255, 0.7);
   }
 }
-
 
 /* Main */
 
@@ -108,22 +281,124 @@ body {
 .tm-content {
   position: relative;
   z-index: 1;
-  color: #c1cdd9;
+  //color: #22294c; //#c1cdd9;
 }
 
-.tm-content-header {}
-
+.tm-content-header {
+  padding: 30px 0;
+  border-bottom: 2px solid #a0dade;
+}
 .tm-content-inner {
+  padding: 30px 0;
 
   label {
     display: block;
   }
 
-  .uk-checkbox {
+  .uk-checkbox, .uk-radio {
     margin-right: 15px;
   }
 }
 
-.tm-button-continue {
+.tm-content-footer {
+  padding-bottom: 20px;
+}
 
+.tm-button-continue {
+  margin-bottom: -95px!important;
+}
+
+.tm-button-next {
+  white-space: nowrap;
+}
+
+.tm-radio-button {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  padding: 0 20px;
+  line-height: 48px;
+  background-color: transparent;
+  border: 1px solid #c1cdd9;
+}
+input.radioId:checked + .tm-radio-button {
+  background-color: $global-background;
+  border-color: transparent;
+  color: $font-color-default;
+  box-shadow: 0 0 5px 1px rgba(25,187,79,0.5);
+}
+
+.tm-paginator-button {
+  width: 40px;
+  height: 40px;
+  background: rgba(193,205,217,0.5);
+  padding: 0;
+  margin: 0 2px;
+  border-radius: 2px;
+  color: $font-color-muted;
+
+  &.uk-active {
+    color: transparent;
+    background-color: $global-background;
+  }
+}
+
+.tm-checkbox-list {
+  label {
+    padding: 5px 0;
+    white-space: nowrap;
+    display: flex;
+
+    input {
+      min-width: 24px;
+    }
+
+    span {
+      margin-top: -3px;
+      white-space: normal;
+    }
+  }
+
+}
+
+.tm-answer {
+  padding: 20px 0;
+
+  .uk-pagination {
+    margin: 0;
+  }
+}
+
+.tm-fact {
+  padding: 80px 0 0;
+}
+
+//Backs
+
+.tm-cover-card {
+  background-size: cover;
+  min-height: 240px;
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.tm-diagnostics-card {
+  background-image: url("/images/diagnostics-card.png");
+}
+
+.tm-budget-card {
+  background-image: url("/images/budget-card.png");
+}
+
+.tm-reserve-card {
+  background-image: url("/images/reserve-card.png");
+}
+
+.tm-insure-card {
+  background-image: url("/images/insure-card.png");
+}
+
+.tm-invest-card {
+  background-image: url("/images/invest-card.png");
 }

@@ -4,7 +4,7 @@ export const Sidebar = props => {
     return (
         <div
             className="tm-sidebar uk-width-medium uk-child-width-1-1 uk-flex uk-flex-wrap uk-flex-wrap-between uk-text-center uk-light"
-            uk-margin>
+            data-uk-margin>
             <div>
                 <div className="tm-sidebar-title uk-text-large uk-text-bold">СберСканер</div>
 
@@ -13,7 +13,7 @@ export const Sidebar = props => {
                 </div>
                 <div className="uk-flex uk-flex-center">
                     <div className="tm-scale">
-                        <i className="fa fa-play" aria-hidden="true"></i>
+                        <i className="fa fa-play" aria-hidden="true"/>
                     </div>
                 </div>
 
@@ -21,10 +21,10 @@ export const Sidebar = props => {
 
             <div className="tm-font-tiny">
                 <div>
-                    <a href="#" className="tm-font-light">sberscaner.ru</a>
+                    <a href="/" className="tm-font-light">sberscaner.ru</a>
                 </div>
                 <div>
-                    <a href="#" className="tm-opacity-70">Политика конфиденциальности</a>
+                    <a href="/" className="tm-opacity-70">Политика конфиденциальности</a>
                 </div>
             </div>
         </div>
