@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+
 import {STEPS} from "./constants";
 
 import {Svg} from "../common/Svg";
@@ -6,37 +8,6 @@ import logoIcon from "../../images/logo-icon.png";
 import iconArrow from "../../images/icon-arrow.svg";
 
 export class Quiz extends React.Component {
-    state = {
-        activeStep: 0,
-        lastApprovedStep: -1,
-        data: {},
-    };
-
-    getData = data => {
-        this.setState({
-            data: {
-                ...this.state.data,
-                ...data,
-            },
-        });
-    };
-
-    getApprove = approve => {
-        const {activeStep, lastApprovedStep} = this.state;
-        if (approve) {
-            if (activeStep < lastApprovedStep) return;
-
-            this.setState({
-                lastApprovedStep: activeStep,
-            });
-        } else {
-            if (activeStep > lastApprovedStep) return;
-
-            this.setState({
-                lastApprovedStep: activeStep - 1,
-            });
-        }
-    };
 
     nextHandler = () => {
         if (this.nextDisable) return;
@@ -57,19 +28,6 @@ export class Quiz extends React.Component {
             activeStep: activeStep - 1,
         });
     };
-
-    get nextDisable() {
-        const {activeStep, lastApprovedStep} = this.state;
-
-        return activeStep <= lastApprovedStep;
-    }
-
-    get prevDisable() {
-        const {activeStep} = this.state;
-
-        return activeStep === 0 || activeStep === STEPS.length - 1;
-    }
-
 
     render() {
         const [title, questionComponent] = STEPS[this.state.activeStep];
@@ -113,3 +71,7 @@ export class Quiz extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+
+});

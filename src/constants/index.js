@@ -1,5 +1,6 @@
 // quiz
-export const QUIZ_ACTIVE_STEP_SET = 'QUIZ_ACTIVE_STEP_SET';
-export const QUIZ_ACTIVE_STEP_APPROVE = 'QUIZ_ACTIVE_STEP_APPROVE';
-export const QUIZ_DATA_SET = 'QUIZ_DATA_SET';
+export const QUIZ_ACTIVE_STEP_SET = 'sber/quiz/QUIZ_ACTIVE_STEP_SET';
+export const QUIZ_ACTIVE_STEP_APPROVE = 'sber/quiz/QUIZ_ACTIVE_STEP_APPROVE';
+export const QUIZ_FINAL_STEP_APPROVE = 'sber/quiz/QUIZ_FINAL_STEP_APPROVE';
+export const QUIZ_DATA_SET = 'sber/quiz/QUIZ_DATA_SET';
 
