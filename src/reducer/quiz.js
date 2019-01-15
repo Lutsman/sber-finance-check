@@ -17,22 +17,20 @@ export const INITIAL_STATE = {
          case QUIZ_ACTIVE_STEP_APPROVE:
              const {activeStep, lastApprovedStep} = state;
              if (payload.approve) {
-                 if (activeStep < lastApprovedStep) return;
+                 if (activeStep < lastApprovedStep) return state;
 
                  return {
                      ...state,
                      lastApprovedStep: activeStep,
                  };
              } else {
-                 if (activeStep > lastApprovedStep) return;
+                 if (activeStep > lastApprovedStep) return state;
 
                  return {
                      ...state,
                      lastApprovedStep: activeStep - 1,
                  };
              }
-
-             return state;
          case QUIZ_DATA_SET:
              return {
                  ...state,

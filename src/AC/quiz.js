@@ -10,11 +10,11 @@ export const activeStepApprove = approve => ({
     payload: {approve},
 });
 
-export const quizFinalStepApprove = () => ({
+export const finalStepApprove = () => ({
     type: QUIZ_FINAL_STEP_APPROVE,
 });
 
-export const quizDataSet = data => ({
+export const dataSet = data => ({
     type: QUIZ_DATA_SET,
     payload: {data},
 });

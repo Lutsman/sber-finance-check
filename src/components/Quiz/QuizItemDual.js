@@ -1,22 +1,7 @@
 import * as React from 'react';
 
-const fieldsData = {
-    values: [
-        {
-            label: 'Да',
-            name: 'income_total',
-            value: 1,
-        },
-        {
-            label: 'Нет',
-            name: 'income_total',
-            value: 0,
-        },
-    ],
-};
-
-export const  QuizItem_2 = props => {
-    const {setData, setApprove, data} = props;
+export const  QuizItemDual = props => {
+    const {setData, setApprove, data, fieldsData} = props;
     const fields = fieldsData.values.map(field => {
         const {label, value, name} = field;
         const isChecked = data[name] === value;

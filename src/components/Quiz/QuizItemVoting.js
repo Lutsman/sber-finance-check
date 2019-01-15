@@ -1,15 +1,7 @@
 import * as React from 'react';
 
-const fieldsData = {
-    type: 'voting',
-    from: 1,
-    to: 12,
-    name: 'finance_backup',
-    label: 'Месяцы'
-};
-
-export const QuizItem_3 = props => {
-    const {setData, setApprove, data} = props;
+export const QuizItemVoting = props => {
+    const {setData, setApprove, data, fieldsData} = props;
     const {from, to, name, label} = fieldsData;
     let fields = [];
 

@@ -3,45 +3,8 @@ import * as React from 'react';
 import {Checkbox} from '../common/Checkbox';
 import {isEmptyObj} from "../common/utils";
 
-const fieldsData = {
-    values: [
-        {
-            label: 'Медицинская страховка',
-            name: 'inshur',
-            value: 'insur_1',
-                                },
-        {
-            label: 'Добровольное медицинское страхование',
-            name: 'inshur',
-            value: 'insur_2',
-        },
-        {
-            label: 'Рисковое страхование',
-            name: 'inshur',
-            value: 'insur_3',
-        },
-        {
-            label: 'Страхование от работодателя',
-            name: 'inshur',
-            value: 'insur_4',
-        },
-        {
-            label: 'Накопительное страхование жизни',
-            name: 'inshur',
-            value: 'insur_5',
-        },
-        {
-            label: 'Страхование выезжающих зарубеж',
-            name: 'inshur',
-            value: 'insur_6',
-        },
-    ],
-};
-
-
-
-export const  QuizItem_5 = props => {
-    const {setData, setApprove, data} = props;
+export const  QuizItemCheckbox = props => {
+    const {setData, setApprove, data, fieldsData} = props;
     const fields = fieldsData.values.map(field => {
         const {label, name, value} = field;
         const isChecked = data[name] && !!data[name][value];

@@ -2,28 +2,8 @@ import * as React from 'react';
 
 import people from "../../images/people.png";
 
-const fieldsData = {
-    values: [
-        {
-            label: 'Да, раз в 3 месяца или чаще',
-            name: 'savings',
-            value: 3,
-        },
-        {
-            label: 'Редко, раз в полгода-год',
-            name: 'savings',
-            value: 2,
-        },
-        {
-            label: 'Нет, обычно тратится всё',
-            name: 'savings',
-            value: 1,
-        },
-    ],
-};
-
-export const  QuizItem_1 = props => {
-    const {setData, setApprove, data} = props;
+export const  QuizItemRadio = props => {
+    const {setData, setApprove, data, fieldsData} = props;
     const fields = fieldsData.values.map(field => {
         const {label, value, name} = field;
         const isChecked = data[name] === value;
