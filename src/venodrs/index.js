@@ -5,5 +5,3 @@ import 'font-awesome/css/font-awesome.css';
 
 // loads the Icon plugin
 UIkit.use(Icons);
-
-console.log('hello dolly');
