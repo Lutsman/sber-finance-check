@@ -33,9 +33,7 @@ export const  QuizItemCheckbox = props => {
     return (
         <div className="tm-answer">
             <div className="uk-margin uk-grid-small uk-child-width-1-2 uk-grid" data-uk-margin>
-                <div className="tm-checkbox-list uk-child-width-1-2" data-uk-grid>
-                    {fields}
-                </div>
+                {fields}
             </div>
 
             <div className="tm-fact">
