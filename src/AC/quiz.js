@@ -1,4 +1,8 @@
-import {QUIZ_ACTIVE_STEP_APPROVE, QUIZ_ACTIVE_STEP_SET, QUIZ_DATA_SET, QUIZ_FINAL_STEP_APPROVE} from "../constants";
+import {QUIZ_ACTIVE_STEP_APPROVE, QUIZ_ACTIVE_STEP_SET, QUIZ_DATA_SET, QUIZ_FINAL_STEP_APPROVE, QUIZ_INIT} from "../constants";
+
+export const init = () => ({
+    type: QUIZ_INIT,
+});
 
 export const activeStepSet = activeStep => ({
     type: QUIZ_ACTIVE_STEP_SET,

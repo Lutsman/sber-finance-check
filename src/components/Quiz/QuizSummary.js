@@ -6,6 +6,8 @@ import iconArrow from '../../images/icon-arrow.svg';
 import recycle from '../../images/recycle.png';
 
 export const  QuizSummary = props => {
+    const {reinit} = props;
+
     return (
         <div className="tm-main">
             <div className="tm-content-wrapper uk-flex uk-flex-wrap uk-flex-stretch">
@@ -13,7 +15,7 @@ export const  QuizSummary = props => {
                 <div className="tm-content">
                     <div className="uk-container uk-padding">
 
-                        <h1>Результаты финансового сканирования</h1>
+                   0     <h1>Результаты финансового сканирования</h1>
 
                         <div className="tm-diagnostics-card tm-cover-card uk-flex uk-child-width-1-2 uk-padding-small">
                             <div className="uk-flex uk-flex-wrap uk-flex-wrap-between">
@@ -100,7 +102,9 @@ export const  QuizSummary = props => {
                         </ul>
 
                         <div className="uk-flex uk-flex-between uk-flex-wrap">
-                            <button className="tm-button-next tm-border-rounded uk-button uk-button-default">
+                            <button
+                                className="tm-button-next tm-border-rounded uk-button uk-button-default"
+                                onClick={reinit}>
                                 <img src={recycle} alt=""/> Пройти заново
                             </button>
                             <button className="tm-border-rounded uk-button uk-button-primary">

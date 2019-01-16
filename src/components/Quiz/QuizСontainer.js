@@ -2,35 +2,34 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 
 import {Quiz} from './Quiz';
-import {STEPS} from "./constants";
 import {
     activeStepSelector,
     approveSelector,
-    dataSelector,
+    dataSelector, isCompleteSelector,
     nextStepDisableSelector,
     prevStepDisableSelector
 } from "../../selectors/quiz";
-import {activeStepApprove, activeStepSet, dataSet, finalStepApprove} from "../../AC/quiz";
+import {activeStepApprove, activeStepSet, dataSet, init} from "../../AC/quiz";
+import {QuizSummary} from "./QuizSummary";
 
-export const QuizContainerInstance = props => {
-    return (
-        <Quiz {...props}/>
-    );
+export const QuizContainerComponent = props => {
+    return props.isComplete ? (<QuizSummary reinit={props.init} />) : (<Quiz {...props}/>);
 };
 
 const mapStateToProps = state => ({
     isApproved: approveSelector(state),
     activeStep: activeStepSelector(state),
-    nextStepDisable: nextStepDisableSelector(state, {steps: STEPS}),
-    prevStepDisable: prevStepDisableSelector(state, {steps: STEPS}),
+    nextStepDisable: nextStepDisableSelector(state),
+    prevStepDisable: prevStepDisableSelector(state),
     data: dataSelector(state),
+    isComplete: isCompleteSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
     setApprove: approve => dispatch(activeStepApprove(approve)),
-    finalStepApprove: () => dispatch(finalStepApprove()),
     setData: data => dispatch(dataSet(data)),
     setActiveStep: step => dispatch(activeStepSet(step)),
+    init: () => dispatch(init()),
 });
 
 export const mergeProps = (stateProps, dispatchProps, ownProps) => {
@@ -48,4 +47,4 @@ export const mergeProps = (stateProps, dispatchProps, ownProps) => {
     };
 };
 
-export const QuizOntainer = connect(mapStateToProps, mapDispatchToProps, mergeProps)(QuizContainerInstance);
+export const QuizOntainer = connect(mapStateToProps, mapDispatchToProps, mergeProps)(QuizContainerComponent);
