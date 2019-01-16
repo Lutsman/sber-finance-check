@@ -6,27 +6,11 @@ export const RoundProgressbar = props => {
     const {children, ...otherProps} = props;
 
     return (
-        <div
-            style={{
-                position: "relative",
-                width: "100%",
-                height: "100%"
-            }}
-        >
-            <div style={{ position: "absolute" }}>
+        <div className="tm-progressbar">
+            <div className="tm-progressbar__indicator">
                 <CircularProgressbar {...otherProps} />
             </div>
-            <div
-                style={{
-                    position: "absolute",
-                    height: "100%",
-                    width: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}
-            >
+            <div className="tm-progressbar__inner">
                 {children}
             </div>
         </div>

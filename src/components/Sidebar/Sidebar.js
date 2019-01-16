@@ -1,4 +1,4 @@
-import  * as React from 'react';
+import * as React from 'react';
 import {connect} from 'react-redux';
 import {RoundProgressbar} from "../RoundProgressbar/RoundProgressbar";
 import {quizFillingSelector} from "../../selectors/quiz";
@@ -16,14 +16,17 @@ export const SidebarInstance = props => {
                 <div className="tm-scale-header tm-opacity-70 uk-text-small">Заполните шкалу, чтобы получить отчет о
                     финансах
                 </div>
-                <div className="uk-flex uk-flex-center">
+                <div className="uk-flex uk-flex-center tm-indicator">
                     <RoundProgressbar percentage={percentage}>
-                            {percentage ?
-                                <div>
-                                    Ваша форма заполнена на: {percentage}%
-                                </div> :
+                        {percentage ?
+                            <div className="tm-indicator__content">
+                                Ваша форма заполнена на:
+                                <span>{percentage}%</span>
+                            </div> :
+                            <div className="tm-indicator__content">
                                 <i className="fa fa-play" aria-hidden="true"/>
-                            }
+                            </div>
+                        }
                     </RoundProgressbar>
                 </div>
 
@@ -45,4 +48,4 @@ const mapStateToProps = state => ({
     percentage: quizFillingSelector(state),
 });
 
-export const Sidebar =  connect(mapStateToProps)(SidebarInstance);
+export const Sidebar = connect(mapStateToProps)(SidebarInstance);

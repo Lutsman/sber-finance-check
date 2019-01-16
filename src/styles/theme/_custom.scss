@@ -225,6 +225,11 @@ h2 {
   }
 }
 
+.tm-indicator {
+  width: 244px;
+  height: 244px;
+}
+
 /* Main */
 
 .tm-main {
@@ -402,3 +407,29 @@ input.radioId:checked + .tm-radio-button {
 .tm-invest-card {
   background-image: url("/images/invest-card.png");
 }
+
+// progressbar
+.tm-progressbar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tm-progressbar__indicator {
+  position: absolute;
+}
+
+.tm-progressbar__inner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > * {
+    max-width: 70%;
+    max-height: 70%;
+  }
+}
+
