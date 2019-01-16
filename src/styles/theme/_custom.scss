@@ -346,10 +346,12 @@ input.radioId:checked + .tm-radio-button {
 
   &.uk-active {
     color: transparent;
-    background-color: $global-background;
+    //background-color: $global-background;
+    background-color: currentColor;
   }
 }
 
+@include colors;
 .tm-checkbox-list {
   label {
     padding: 8px 0;

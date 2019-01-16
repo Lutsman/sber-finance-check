@@ -36,7 +36,19 @@ $font-weight-thin: 400;
 // Colors
 //
 
+$group-size: 20;
+$step: 360/20;
 
+@mixin colors(){
+  @for $i from 1 through $group-size {
+    .uk-pagination LI:nth-child(#{$group-size}n + #{$i}) {
+      &.uk-active {
+        $color: hsl(($i - 1)*$step, 80%, 60%);
+        background-color: hsl(($i - 1)*$step, 80%, 60%);
+      }
+    }
+  }
+}
 
 //
 // Backgrounds
