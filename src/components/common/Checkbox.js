@@ -21,13 +21,11 @@ export class Checkbox extends React.Component {
 
     render() {
         return (
-            <label>
                 <input
                     className="uk-checkbox"
                     type="checkbox"
                     onChange={this.changeHangler}
                     checked = {this.state.checked}/>
-            </label>
         )
     }
 }
