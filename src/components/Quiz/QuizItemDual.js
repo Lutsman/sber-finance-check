@@ -38,16 +38,8 @@ export class QuizItemDual extends React.Component {
         });
 
         return (
-            <div className="tm-answer">
-                <div className="uk-margin uk-flex" data-uk-margin>
-                    {fields}
-                </div>
-
-                <div className="tm-fact">
-                    <div className="uk-text-muted">На что тратят другие?</div>
-
-                </div>
-
+            <div className="uk-margin uk-flex" data-uk-margin>
+                {fields}
             </div>
         );
     }

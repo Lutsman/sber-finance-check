@@ -14,7 +14,7 @@ export class QuizItemRadio extends React.Component {
     }
 
     render() {
-        const {setData, setApprove, data, fieldsData} =this.props;
+        const {setData, setApprove, data, fieldsData} = this.props;
         const fields = fieldsData.values.map(field => {
             const {label, value, name} = field;
             const isChecked = data[name] === value;
@@ -33,29 +33,8 @@ export class QuizItemRadio extends React.Component {
         });
 
         return (
-            <div className="tm-answer">
-                <div className="uk-margin" data-uk-margin>
-                    {fields}
-                </div>
-
-                <div className="tm-fact">
-                    <div className="uk-text-muted">А вы знали, что:</div>
-
-                    <div className="uk-flex-between uk-grid-large" data-uk-grid>
-                        <div className="uk-width-2-5">
-                            <div className="tm-font-light uk-text-lead uk-text-primary">46%</div>
-                            <div className="tm-text-large">всех клиентов тратят практически всю свою
-                                зарплату.
-                                Практически каждый второй.
-                            </div>
-                        </div>
-
-                        <div className="uk-width-3-5">
-                            <img src={people} alt=""/>
-                        </div>
-                    </div>
-                </div>
-
+            <div className="uk-margin" data-uk-margin>
+                {fields}
             </div>
         );
     }

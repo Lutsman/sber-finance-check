@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {RoundProgressbar} from "../RoundProgressbar/RoundProgressbar";
 import {quizFillingSelector} from "../../selectors/quiz";
 
-export const SidebarComponent = props => {
+export const SidebarQuizComponent = props => {
     const {percentage} = props;
 
     return (
@@ -48,4 +48,4 @@ const mapStateToProps = state => ({
     percentage: quizFillingSelector(state),
 });
 
-export const Sidebar = connect(mapStateToProps)(SidebarComponent);
+export const SidebarQuiz = connect(mapStateToProps)(SidebarQuizComponent);

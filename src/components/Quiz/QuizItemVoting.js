@@ -32,7 +32,6 @@ export class QuizItemVoting extends React.Component {
         }
 
         return (
-            <div className="tm-answer">
                 <div className="uk-margin" data-uk-margin>
                     <div>{label}</div>
 
@@ -41,28 +40,7 @@ export class QuizItemVoting extends React.Component {
                             {fields}
                         </ul>
                     </div>
-
-
                 </div>
-
-                <div className="tm-fact">
-                    <div className="uk-text-muted">Сколько хранят другие?</div>
-
-                    <div className="uk-flex-between uk-grid-large" data-uk-grid>
-                        <div className="uk-width-2-5">
-                            <div className="tm-font-light uk-text-lead uk-text-primary">4</div>
-                            <div className="tm-text-large">месячных дохода. Примерно столько держат
-                                клиенты в сбережениях на «черный день»
-                            </div>
-                        </div>
-
-                        <div className="uk-width-3-5">
-                            <img src={iconMoney} alt=""/>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         );
     }
 }

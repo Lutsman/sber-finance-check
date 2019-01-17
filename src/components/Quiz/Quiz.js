@@ -1,14 +1,17 @@
 import * as React from 'react';
 
 import {Svg} from "../common/Svg";
+import {Facts} from "../Facts/Facts";
 
 import {STEPS} from "./constants";
 import logoIcon from "../../images/logo-icon.png";
 import iconArrow from "../../images/icon-arrow.svg";
 
 export const Quiz = props => {
-    const {activeStep, data, setApprove, setData, nextStep, prevStep,
-        nextStepDisable, prevStepDisable} = props;
+    const {
+        activeStep, data, setApprove, setData, nextStep, prevStep,
+        nextStepDisable, prevStepDisable
+    } = props;
     const {title, component: QuizStep, question, fieldsData} = STEPS[activeStep];
 
     return (
@@ -27,7 +30,7 @@ export const Quiz = props => {
                                 <button className="tm-button-continue tm-border-rounded uk-button uk-button-primary"
                                         onClick={nextStep}
                                         disabled={nextStepDisable}>
-                                    Продолжить <Svg src={iconArrow} alt="" />
+                                    Продолжить <Svg src={iconArrow} alt=""/>
                                 </button>
                             </div>
                         </div>
@@ -39,12 +42,15 @@ export const Quiz = props => {
                                     <button className="tm-button-next tm-border-rounded uk-button uk-button-default"
                                             onClick={prevStep}
                                             disabled={prevStepDisable}>
-                                        Назад <Svg src={iconArrow} alt="" />
+                                        Назад <Svg src={iconArrow} alt=""/>
                                     </button>
                                 </div>
+                                <div className="tm-answer">
 
-                                <QuizStep setData={setData} setApprove={setApprove} data={data} fieldsData={fieldsData}/>
-
+                                    <QuizStep setData={setData} setApprove={setApprove} data={data}
+                                              fieldsData={fieldsData}/>
+                                    <Facts/>
+                                </div>
                             </div>
                         </div>
                     </div>

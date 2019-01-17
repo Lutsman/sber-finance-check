@@ -42,15 +42,8 @@ export class QuizItemCheckbox extends React.Component {
         });
 
         return (
-            <div className="tm-answer">
-                <div className="tm-checkbox-list uk-margin uk-grid-small uk-child-width-1-2 uk-grid">
-                    {fields}
-                </div>
-
-                <div className="tm-fact">
-                    <div className="uk-text-muted">Кто ещё застрахован?</div>
-                </div>
-
+            <div className="tm-checkbox-list uk-margin uk-grid-small uk-child-width-1-2 uk-grid">
+                {fields}
             </div>
         );
     }
