@@ -9,7 +9,7 @@
 		</clipPath>
 	</defs>
 	<g clip-path="url(#clip_0)">
-		<use fill="currentcolor" stroke="none" transform="translate(-2 -1.97363)" xlink:href="#img_0"/>
+		<use fill="currentColor" stroke="none" transform="translate(-2 -1.97363)" xlink:href="#img_0"/>
 	</g>
 	<defs>
 		<clipPath id="clip_1">
@@ -17,7 +17,7 @@
 		</clipPath>
 	</defs>
 	<g clip-path="url(#clip_1)">
-		<path fill="none" stroke="currentcolor" stroke-width="1" stroke-miterlimit="4" transform="translate(1.24265 1.26904)" d="M6 6L0 6L0 0L0 0"/>
+		<path fill="none" stroke="currentColor" stroke-width="1" stroke-miterlimit="4" transform="translate(1.24265 1.26904)" d="M6 6L0 6L0 0L0 0"/>
 	</g>
 	<defs>
 		<clipPath id="clip_2">
@@ -25,7 +25,7 @@
 		</clipPath>
 	</defs>
 	<g clip-path="url(#clip_2)">
-		<path fill="none" stroke="currentcolor" stroke-width="1" stroke-miterlimit="4" transform="translate(0.707092 3.44055)" d="M11.5117 1L0.0137153 1"/>
+		<path fill="none" stroke="currentColor" stroke-width="1" stroke-miterlimit="4" transform="translate(0.707092 3.44055)" d="M11.5117 1L0.0137153 1"/>
 	</g>
 
 </svg>
