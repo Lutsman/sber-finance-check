@@ -80,10 +80,8 @@ export const STEPS = [
     },
     {
         title: 'Финансовая защита',
-        question:
-            'Какие программы страхования жизни у вас есть?',
-        component:
-        QuizItemCheckbox,
+        question: 'Какие программы страхования жизни у вас есть?',
+        component: QuizItemCheckbox,
         fieldsData: {
             values: [
                 {
