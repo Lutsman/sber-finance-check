@@ -155,15 +155,15 @@ h2 {
 }
 
 .tm-good.uk-accordion-title::before {
-  background-image: url("/images/thumb-up.png");
+  background-image: url("../images/thumb-up.png");
 }
 
 .tm-bad.uk-accordion-title::before {
-  background-image: url("/images/thumb-down.png");
+  background-image: url("../images/thumb-down.png");
 }
 
 .tm-warning.uk-accordion-title::before {
-  background-image: url("/images/thumb-warn.png");
+  background-image: url("../images/thumb-warn.png");
 }
 
 
@@ -426,23 +426,23 @@ input.radioId:checked + .tm-radio-button {
 }
 
 .tm-diagnostics-card {
-  background-image: url("/images/diagnostics-card.png");
+  background-image: url("../images/diagnostics-card.png");
 }
 
 .tm-budget-card {
-  background-image: url("/images/budget-card.png");
+  background-image: url("../images/budget-card.png");
 }
 
 .tm-reserve-card {
-  background-image: url("/images/reserve-card.png");
+  background-image: url("../images/reserve-card.png");
 }
 
 .tm-insure-card {
-  background-image: url("/images/insure-card.png");
+  background-image: url("../images/insure-card.png");
 }
 
 .tm-invest-card {
-  background-image: url("/images/invest-card.png");
+  background-image: url("../images/invest-card.png");
 }
 
 // progressbar

@@ -15,7 +15,7 @@ export const  QuizSummary = props => {
                 <div className="tm-content">
                     <div className="uk-container uk-padding">
 
-                   0     <h1>Результаты финансового сканирования</h1>
+                        <h1>Результаты финансового сканирования</h1>
 
                         <div className="tm-diagnostics-card tm-cover-card uk-flex uk-child-width-1-2 uk-padding-small">
                             <div className="uk-flex uk-flex-wrap uk-flex-wrap-between">
