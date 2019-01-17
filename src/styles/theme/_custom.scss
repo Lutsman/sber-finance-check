@@ -522,7 +522,7 @@ input.radioId:checked + .tm-radio-button {
     height: 476px;
     top: -170%;
     left: -170%;
-    background: url(/images/btn-power-circles.png) no-repeat;
+    background: url("../images/btn-power-circles.png") no-repeat;
     //background-size: contain;
     content: "";
     transform: rotate(-5deg);
