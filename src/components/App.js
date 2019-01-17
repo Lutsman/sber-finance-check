@@ -3,6 +3,7 @@ import {Route, Switch, Redirect} from 'react-router-dom'
 
 import {Inner} from "./routes/Inner";
 import {OffCanvas} from "./OffCanvas/OffCanvas";
+import {Start} from "./routes/Start";
 
 export class App extends Component {
   render() {
@@ -11,7 +12,8 @@ export class App extends Component {
             <div className="uk-child-width-expand uk-height-viewport uk-flex uk-flex-stretch">
 
                 <Switch>
-                    <Redirect from="/" exact to="/inner"/>
+                    <Redirect from="/" exact to="/start"/>
+                    <Route path="/start" component={Start} />
                     <Route path="/inner" component={Inner} />
                 </Switch>
             </div>

@@ -8,7 +8,7 @@ import iconArrow from "../../images/icon-arrow.svg";
 
 export const Quiz = props => {
     const {activeStep, data, setApprove, setData, nextStep, prevStep,
-        nextStepDisable, prevStepDisable, finalStepApprove} = props;
+        nextStepDisable, prevStepDisable} = props;
     const {title, component: QuizStep, question, fieldsData} = STEPS[activeStep];
 
     return (
