@@ -113,6 +113,12 @@ h2 {
   color: #c1cdd9;
 }
 
+.uk-button-default:disabled {
+  background-color: transparent;
+  color: #c1cdd9;
+  border: 1px solid #c1cdd9;
+}
+
 .uk-checkbox, .uk-radio {
   width: 24px;
   height: 24px;
@@ -228,6 +234,35 @@ h2 {
 .tm-indicator {
   width: 244px;
   height: 244px;
+}
+
+.tm-progressbar__indicator {
+  svg {
+    fill: rgba(255, 255, 255, 0.3);
+    path {
+      fill: rgba(255, 255, 255, 0.3);
+      stroke-width: 3px;
+    }
+
+  }
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #ffffff!important;
+}
+
+.tm-indicator__content {
+  font-size: $font-size-small;
+
+  span {
+    display: block;
+    font-size: $font-size-h1;
+    font-weight: $font-weight-thin;
+  }
+
+  .fa-play {
+    font-size: 30px;
+  }
 }
 
 /* Main */
