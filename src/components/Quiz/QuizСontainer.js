@@ -23,6 +23,7 @@ const mapStateToProps = state => ({
     prevStepDisable: prevStepDisableSelector(state),
     data: dataSelector(state),
     isComplete: isCompleteSelector(state),
+
 });
 
 const mapDispatchToProps = dispatch => ({
