@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Svg} from "../common/Svg";
+import {Svg} from "../Svg/Svg";
 import {Facts} from "../Facts/Facts";
 
 import logoIcon from "../../images/logo-icon.png";

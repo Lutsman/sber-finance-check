@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Svg} from "../common/Svg";
+import {Svg} from "../Svg/Svg";
 
 import iconArrow from '../../images/icon-arrow.svg';
 import recycle from '../../images/recycle.png';
