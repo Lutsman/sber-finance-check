@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import iconMoney from "../../images/money.png";
-
 export class QuizItemVoting extends React.Component {
     componentDidMount() {
         const {data, fieldsData:{name}, setApprove} = this.props;
