@@ -35,7 +35,7 @@ export const QuizStartComponent = props => {
                             </div>
                         </div>
                     </div>
-                    <div className="uk-container uk-hidden@s uk-margin-xlarge-top uk-padding-large uk-text-center">
+                    <div className="tm-margin-megalarge uk-container uk-hidden@s uk-padding-large uk-text-center">
                         <div>
                             <div className="tm-sidebar-title uk-flex uk-flex-center">
                                 <div className="tm-app-icon" />
