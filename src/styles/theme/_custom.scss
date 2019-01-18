@@ -423,11 +423,13 @@ input.radioId:checked + .tm-radio-button {
 //Backs
 
 .tm-cover-card {
-  background-size: cover;
+  background-color: $global-background;
+  //background-size: cover;
+  background-size: contain;
   min-height: 240px;
   border-radius: 2px;
   background-repeat: no-repeat;
-  background-position: center right;
+  background-position: bottom right;
 }
 
 .tm-diagnostics-card {
