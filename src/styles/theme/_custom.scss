@@ -577,6 +577,11 @@ input.radioId:checked + .tm-radio-button {
   body {
     min-width: 300px;
   }
+
+  //exp
+  .tm-start-only {
+    padding-bottom: 120px;
+  }
 }
 
 .tm-padding-s {
@@ -593,6 +598,7 @@ input.radioId:checked + .tm-radio-button {
     background: $global-background;
     color: #fff;
     font-size: $font-size-small;
+    padding-bottom: 0;
 
     .tm-text-scaner {
       color: #fff;
