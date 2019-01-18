@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export const SidebarQuizStart = () => (
     <div
-        className="tm-sidebar uk-width-medium uk-child-width-1-1 uk-flex uk-flex-wrap uk-flex-wrap-between uk-text-center uk-light"
+        className="tm-sidebar uk-visible@m uk-width-medium uk-child-width-1-1 uk-flex uk-flex-wrap uk-flex-wrap-between uk-text-center uk-light"
         data-uk-margin>
         <div>
             <div className="tm-sidebar-title uk-flex uk-flex-center">

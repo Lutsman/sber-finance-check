@@ -523,19 +523,19 @@ input.radioId:checked + .tm-radio-button {
     box-shadow: 0 0 22px 0 rgba(2,196,159,0.92);
   }
 
-  &:before {
-    position: absolute;
-    display: block;
-    width: 476px;
-    height: 476px;
-    top: -170%;
-    left: -170%;
-    background: url("../images/btn-power-circles.png") no-repeat;
-    //background-size: contain;
-    content: "";
-    transform: rotate(-5deg);
-    z-index: -1;
-  }
+  //&:before {
+  //  position: absolute;
+  //  display: block;
+  //  width: 476px;
+  //  height: 476px;
+  //  top: -170%;
+  //  left: -170%;
+  //  background: url("../images/btn-power-circles.png") no-repeat;
+  //  //background-size: contain;
+  //  content: "";
+  //  transform: rotate(-5deg);
+  //  z-index: -1;
+  //}
 }
 
 .tm-scale-header-alt {
@@ -651,5 +651,33 @@ input.radioId:checked + .tm-radio-button {
     background-color: #19bb4f;
     background-image: none;
     padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1140px) {
+  .tm-main {
+    padding-right: 334px;
+
+    .tm-content-wrapper {
+      margin: 0 auto;
+    }
+  }
+
+}
+
+.tm-button-start-wrapper {
+  position: relative;
+  &:before {
+    position: absolute;
+    display: block;
+    width: 476px;
+    height: 476px;
+    top: -166%;
+    left: -166%;
+    background: url("../images/btn-power-circles.png") no-repeat;
+    //background-size: contain;
+    content: "";
+    transform: rotate(-5deg);
+    z-index: -1;
   }
 }

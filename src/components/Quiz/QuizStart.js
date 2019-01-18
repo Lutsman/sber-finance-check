@@ -25,7 +25,7 @@ export const QuizStartComponent = props => {
                                 Начать<br/>сканирование
                             </div>
                             <div className="uk-flex uk-flex-center">
-                                <div className="">
+                                <div className="tm-button-start-wrapper">
                                     <Link to="/inner" onClick={quizInit} className="tm-button-start uk-button">
                                         <img className="uk-border-circle" src={btnPower} alt=""/>
                                     </Link>
