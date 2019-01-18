@@ -25,7 +25,7 @@ const mapStateToProps = state => ({
     prevStepDisable: prevStepDisableSelector(state),
     data: dataSelector(state),
     isComplete: isCompleteSelector(state),
-    quizItem: quizItemSelector(state),
+    QuizItem: quizItemSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({

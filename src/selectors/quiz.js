@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
 
-import {STEPS, STEP_TYPE} from "../components/Quiz/constants";
+import {STEP_TYPE, STEPS} from "../components/Quiz/constants";
 import {QuizItemRadio} from "../components/Quiz/QuizItemRadio";
 import {QuizItemDual} from "../components/Quiz/QuizItemDual";
 import {QuizItemVoting} from "../components/Quiz/QuizItemVoting";
@@ -15,10 +15,10 @@ export const quizFillingSelector = state => Math.round((state.quiz.lastApprovedS
 export const isCompleteSelector = state => state.quiz.isComplete;
 
 export const activeStepSelector = createSelector(activeStepIndexSelector, index => STEPS[index]);
-export const  quizItemSelector = createSelector(activeStepSelector, state => {
-    const {activeStep} = state.quiz;
-    
-    switch (STEPS[activeStep].component) {
+export const  quizItemSelector = createSelector(activeStepSelector, step => {
+    if (!step) return null;
+
+    switch (step.component) {
         case STEP_TYPE.radio:
             return QuizItemRadio;
         case STEP_TYPE.dual:

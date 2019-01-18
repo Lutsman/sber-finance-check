@@ -9,9 +9,9 @@ import iconArrow from "../../images/icon-arrow.svg";
 export const Quiz = props => {
     const {
         activeStep, data, setApprove, setData, nextStep, prevStep,
-        nextStepDisable, prevStepDisable, isApproved
+        nextStepDisable, prevStepDisable, isApproved, QuizItem
     } = props;
-    const {title, component: QuizStep, question, fieldsData} = activeStep;
+    const {title, question, fieldsData} = activeStep;
 
     return (
         <div className="tm-main">
@@ -46,7 +46,7 @@ export const Quiz = props => {
                                 </div>
                                 <div className="tm-answer">
 
-                                    <QuizStep setData={setData} setApprove={setApprove} data={data}
+                                    <QuizItem setData={setData} setApprove={setApprove} data={data}
                                               fieldsData={fieldsData}/>
                                     {isApproved && <Facts/>}
                                 </div>
