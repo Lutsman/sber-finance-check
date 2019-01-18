@@ -268,6 +268,7 @@ h2 {
 
 .tm-main {
   overflow-x: hidden;
+  overflow-y: hidden;
   padding: 20px 70px 20px 0;
 }
 
@@ -565,6 +566,7 @@ input.radioId:checked + .tm-radio-button {
 
   .tm-main {
     padding: 0;
+
   }
 
   .tm-content-wrapper {
@@ -575,6 +577,10 @@ input.radioId:checked + .tm-radio-button {
   body {
     min-width: 300px;
   }
+}
+
+.tm-padding-s {
+  padding: 30px 0 0;
 }
 
 @media (max-width: 639px) {
@@ -618,7 +624,7 @@ input.radioId:checked + .tm-radio-button {
   }
 
   .tm-padding-s {
-    padding: 30px 0 0;
+    //padding: 30px 0 0;
     width: 100%;
 
     button {
