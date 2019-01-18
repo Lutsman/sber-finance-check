@@ -83,6 +83,7 @@ h2 {
   color: $font-color-default;
   border: 1px solid transparent;
   box-shadow: 0 15px 45px -12px $global-background;
+  white-space: nowrap;
 }
 
 .uk-button-primary:focus, .uk-button-primary:hover {
@@ -267,6 +268,7 @@ h2 {
 
 .tm-main {
   overflow-x: hidden;
+  overflow-y: hidden;
   padding: 20px 70px 20px 0;
 }
 
@@ -377,7 +379,7 @@ input.radioId:checked + .tm-radio-button {
   height: 40px;
   background: rgba(193,205,217,0.5);
   padding: 0;
-  margin: 0 2px;
+  margin: 4px 2px;
   border-radius: 2px;
   color: $font-color-muted;
 
@@ -422,11 +424,13 @@ input.radioId:checked + .tm-radio-button {
 //Backs
 
 .tm-cover-card {
-  background-size: cover;
+  background-color: $global-background;
+  //background-size: cover;
+  background-size: contain;
   min-height: 240px;
   border-radius: 2px;
   background-repeat: no-repeat;
-  background-position: center right;
+  background-position: bottom right;
 }
 
 .tm-diagnostics-card {
@@ -562,19 +566,21 @@ input.radioId:checked + .tm-radio-button {
 
   .tm-main {
     padding: 0;
+
   }
 
   .tm-content-wrapper {
     margin: 0 auto;
   }
 
-  .tm-button-continue {
-    margin-bottom: 0 !important;
-  }
 
   body {
     min-width: 300px;
   }
+}
+
+.tm-padding-s {
+  padding: 30px 0 0;
 }
 
 @media (max-width: 639px) {
@@ -591,12 +597,59 @@ input.radioId:checked + .tm-radio-button {
     padding: 20px 0;
   }
 
+  .tm-button-continue {
+    margin-bottom: 0 !important;
+  }
+
+  h1 {
+    font-size: $font-size-small;
+  }
+
   h2 {
     font-size: $font-size-global;
     margin: 0 0 10px 0;
   }
 
+  .uk-text-large {
+    font-size: $font-size-global;
+  }
+
+  .uk-accordion-content {
+    font-size: $font-size-small;
+    border-top: 1px solid #c1cdd9;
+  }
+
   .tm-fact {
     padding: 30px 0 0;
+  }
+
+  .tm-padding-s {
+    //padding: 30px 0 0;
+    width: 100%;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .tm-button-next {
+    margin-bottom: 10px;
+  }
+
+  .tm-font-color-alt-s {
+    color: #628af7;
+  }
+  .tm-cover-card {
+    //background-size: cover;
+    //min-height: 240px;
+    //border-radius: 2px;
+    //background-repeat: no-repeat;
+    //background-position: center right;
+  }
+
+  .tm-diagnostics-card, .tm-budget-card, .tm-reserve-card, .tm-insure-card, .tm-invest-card {
+    background-color: #19bb4f;
+    background-image: none;
+    padding-bottom: 0;
   }
 }

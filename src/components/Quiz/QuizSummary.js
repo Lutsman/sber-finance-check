@@ -4,6 +4,7 @@ import {Svg} from "../common/Svg";
 
 import iconArrow from '../../images/icon-arrow.svg';
 import recycle from '../../images/recycle.png';
+import bgcardsmall from "../../images/diagnostics-card-small.png";
 
 export const  QuizSummary = props => {
     const {reinit} = props;
@@ -17,10 +18,10 @@ export const  QuizSummary = props => {
 
                         <h1>Результаты финансового сканирования</h1>
 
-                        <div className="tm-diagnostics-card tm-cover-card uk-flex uk-child-width-1-2 uk-padding-small">
-                            <div className="uk-flex uk-flex-wrap uk-flex-wrap-between">
+                        <div className="tm-diagnostics-card tm-cover-card uk-flex uk-flex-wrap uk-child-width-1-1 uk-child-width-1-2@s uk-padding-small">
+                            <div className="uk-flex uk-flex-wrap uk-flex-wrap-between uk-padding uk-padding-remove-vertical uk-padding-remove-left">
                                 <div>
-                                    <div className="tm-font-tiny">Рекомендация</div>
+                                    <div className="tm-font-tiny uk-visible@s">Рекомендация</div>
                                     <div className="uk-text-large uk-light uk-padding-small uk-padding-remove-horizontal">На
                                         первый взгляд у вас всё хорошо
                                     </div>
@@ -28,13 +29,13 @@ export const  QuizSummary = props => {
                                         ваших финансов с клиентским менеджером.
                                     </div>
                                 </div>
-                                <div>
+                                <div className="tm-padding-s">
                                     <button className="tm-border-rounded uk-button uk-button-default uk-light">Оставить заявку
                                     </button>
                                 </div>
                             </div>
-                            <div>
-
+                            <div className="">
+                                <img className="uk-hidden@s" src={bgcardsmall} alt="" />
                             </div>
                         </div>
 
@@ -44,7 +45,7 @@ export const  QuizSummary = props => {
                                 <div className="uk-accordion-content">
                                     <div className="uk-padding uk-padding-remove-horizontal uk-padding-remove-top">
                                         <div
-                                            className="tm-font-light tm-padding-tiny uk-text-large uk-padding-remove-horizontal">Сбережения
+                                            className="tm-font-color-alt-s tm-font-light tm-padding-tiny uk-text-large uk-padding-remove-horizontal">Сбережения
                                         </div>
                                         <div className="uk-text-small">Вы сохраните текущий уровень жизни от 3 до 6 месяцев,
                                             если потеряете работу.
@@ -64,7 +65,7 @@ export const  QuizSummary = props => {
                                     </div>
                                     <div>
                                         <div
-                                            className="tm-font-light tm-padding-tiny uk-text-large uk-padding-remove-horizontal">Обязательные
+                                            className="tm-font-color-alt-s tm-font-light tm-padding-tiny uk-text-large uk-padding-remove-horizontal">Обязательные
                                             расходы
                                         </div>
                                         <div className="uk-text-small">Вы знаете размер своих обязательных расходов.</div>
@@ -101,7 +102,7 @@ export const  QuizSummary = props => {
                             </li>
                         </ul>
 
-                        <div className="uk-flex uk-flex-between uk-flex-wrap">
+                        <div className="uk-flex uk-flex-between uk-flex-wrap uk-child-width-1-1 uk-child-width-auto@s">
                             <button
                                 className="tm-button-next tm-border-rounded uk-button uk-button-default"
                                 onClick={reinit}>

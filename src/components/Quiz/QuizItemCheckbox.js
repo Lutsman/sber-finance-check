@@ -42,7 +42,7 @@ export class QuizItemCheckbox extends React.Component {
         });
 
         return (
-            <div className="tm-checkbox-list uk-margin uk-grid-small uk-child-width-1-2 uk-grid">
+            <div className="tm-checkbox-list uk-margin uk-grid-small uk-child-width-1-1 uk-child-width-1-2@s uk-grid">
                 {fields}
             </div>
         );
