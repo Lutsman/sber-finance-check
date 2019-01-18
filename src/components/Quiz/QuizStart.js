@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {init} from "../../AC/quiz";
 
 import btnPower from "../../images/btn-power.png";
+import btnFingerprint from "../../images/btn-fingerprint.png";
 
 export const QuizStartComponent = props => {
     const {quizInit} = props;
@@ -11,7 +12,7 @@ export const QuizStartComponent = props => {
         <div className="tm-main">
             <div className="tm-content-wrapper tm-content-start uk-flex uk-flex-wrap uk-flex-stretch">
 
-                <div className="tm-content uk-padding uk-padding-remove-horizontal">
+                <div className="tm-content tm-start-only uk-padding uk-padding-remove-horizontal">
                     <div className="uk-container uk-padding-large uk-padding-remove-top uk-text-center">
 
                         <div className="uk-margin-large-bottom">
@@ -27,9 +28,29 @@ export const QuizStartComponent = props => {
                             <div className="uk-flex uk-flex-center">
                                 <div className="tm-button-start-wrapper">
                                     <Link to="/inner" onClick={quizInit} className="tm-button-start uk-button">
-                                        <img className="uk-border-circle" src={btnPower} alt=""/>
+                                        <img className="uk-border-circle uk-visible@s" src={btnPower} alt=""/>
+                                        <img className="uk-border-circle uk-hidden@s" src={btnFingerprint} alt=""/>
                                     </Link>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="uk-container uk-hidden@s uk-margin-xlarge-top uk-padding-large uk-text-center">
+                        <div>
+                            <div className="tm-sidebar-title uk-flex uk-flex-center">
+                                <div className="tm-app-icon" />
+                            </div>
+                        </div>
+
+                        <div className="tm-font-tiny tm-links-alt">
+                            <div>
+                                <a href="/" className="tm-opacity-70">Политика конфиденциальности</a>
+                            </div>
+                            <div>
+                                <a href="/" className="tm-opacity-70">Другая юридическая инфа</a>
+                            </div>
+                            <div>
+                                <a href="/" className="tm-font-light">sberscaner.ru</a>
                             </div>
                         </div>
                     </div>

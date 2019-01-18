@@ -585,6 +585,60 @@ input.radioId:checked + .tm-radio-button {
 
 @media (max-width: 639px) {
 
+  .tm-content-wrapper .tm-start-only {
+    overflow: hidden;
+  }
+
+  .tm-start-only {
+    background: $global-background;
+    color: #fff;
+    font-size: $font-size-small;
+
+    .tm-text-scaner {
+      color: #fff;
+      font-size: $font-size-h2;
+    }
+
+    .tm-text-subscaner {
+      color: #fff;
+      font-size: 10px;
+    }
+
+    .tm-scale-header-alt {
+      color: #fff;
+      font-size: $font-size-tiny;
+
+      &:before {
+        background-color: rgba(98,221,80,0.5);
+      }
+    }
+
+    .tm-button-start {
+      border: 1px solid transparent;
+      box-shadow: 0 0 27px 0 rgba(98,221,80,0.55);
+
+      &:active, &:focus, &:hover {
+        box-shadow: 0 0 22px 0 rgba(98,221,80,0.92);
+      }
+    }
+
+    .tm-button-start-wrapper:before {
+      background-color: #19bb4f;
+      background-blend-mode: multiply;
+    }
+
+    .tm-links-alt {
+      a {
+        color: #fff;
+        padding: 10px 0;
+      }
+    }
+
+    .tm-sidebar-title {
+      padding: 50px 0 10px;
+    }
+  }
+
   .tm-answer {
     font-size: $font-size-small;
   }
