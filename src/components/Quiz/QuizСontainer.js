@@ -3,11 +3,12 @@ import {connect} from 'react-redux';
 
 import {Quiz} from './Quiz';
 import {
-    activeStepSelector,
+    activeStepSelector, activeStepIndexSelector,
     approveSelector,
     dataSelector, isCompleteSelector,
     nextStepDisableSelector,
-    prevStepDisableSelector
+    prevStepDisableSelector,
+    quizItemSelector,
 } from "../../selectors/quiz";
 import {activeStepApprove, activeStepSet, dataSet, init} from "../../AC/quiz";
 import {QuizSummary} from "./QuizSummary";
@@ -18,12 +19,13 @@ export const QuizContainerComponent = props => {
 
 const mapStateToProps = state => ({
     isApproved: approveSelector(state),
+    activeStepIndex: activeStepIndexSelector(state),
     activeStep: activeStepSelector(state),
     nextStepDisable: nextStepDisableSelector(state),
     prevStepDisable: prevStepDisableSelector(state),
     data: dataSelector(state),
     isComplete: isCompleteSelector(state),
-
+    quizItem: quizItemSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -34,10 +36,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export const mergeProps = (stateProps, dispatchProps, ownProps) => {
-    const {activeStep, nextStepDisable, prevStepDisable} = stateProps;
+    const {activeStepIndex, nextStepDisable, prevStepDisable} = stateProps;
     const {setActiveStep} = dispatchProps;
-    const nextStep = () => !nextStepDisable && setActiveStep(activeStep + 1);
-    const prevStep = () => !prevStepDisable && setActiveStep(activeStep - 1);
+    const nextStep = () => !nextStepDisable && setActiveStep(activeStepIndex + 1);
+    const prevStep = () => !prevStepDisable && setActiveStep(activeStepIndex - 1);
 
     return {
         ...ownProps,

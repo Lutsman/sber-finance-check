@@ -1,13 +1,15 @@
-import {QuizItemCheckbox} from "./QuizItemCheckbox";
-import {QuizItemDual} from "./QuizItemDual";
-import {QuizItemRadio} from "./QuizItemRadio";
-import {QuizItemVoting} from "./QuizItemVoting";
+export const STEP_TYPE = {
+    radio: 'radio',
+    dual: 'dual',
+    vote: 'vote',
+    checkbox: 'checkbox',
+};
 
 export const STEPS = [
     {
         title: 'Сбережения',
         question: 'Удается ли вам откладывать часть ваших доходов?',
-        component: QuizItemRadio,
+        component: STEP_TYPE.radio,
         fieldsData: {
             values: [
                 {
@@ -31,7 +33,7 @@ export const STEPS = [
     {
         title: 'Обязательные расходы',
         question: 'Знаете ли вы точный размер ваших обязательных ежемесячных трат?',
-        component: QuizItemDual,
+        component: STEP_TYPE.dual,
         fieldsData: {
             values: [
                 {
@@ -50,7 +52,7 @@ export const STEPS = [
     {
         title: 'Финансовый резерв',
         question: 'Если вы потеряете работу как долго сможете сохранить текущий уровень жизни?',
-        component: QuizItemVoting,
+        component: STEP_TYPE.vote,
         fieldsData: {
             type: 'voting',
             from: 1,
@@ -62,7 +64,7 @@ export const STEPS = [
     {
         title: 'Финансовый резерв',
         question: 'Сможете ли вы прямо сейчас купить двухнедельную путёвку не беря кредит?',
-        component: QuizItemDual,
+        component: STEP_TYPE.dual,
         fieldsData: {
             values: [
                 {
@@ -81,7 +83,7 @@ export const STEPS = [
     {
         title: 'Финансовая защита',
         question: 'Какие программы страхования жизни у вас есть?',
-        component: QuizItemCheckbox,
+        component: STEP_TYPE.checkbox,
         fieldsData: {
             values: [
                 {
@@ -120,7 +122,7 @@ export const STEPS = [
     {
         title: 'Цели',
         question: 'Есть ли у вас приоритетные цели, на которые Вы хотели бы накопить?',
-        component: QuizItemRadio,
+        component: STEP_TYPE.radio,
         fieldsData: {
             values: [
                 {
@@ -144,7 +146,7 @@ export const STEPS = [
     {
         title: 'Инвестиционные инструменты',
         question: 'В каких инструментах вы держите часть своих сбережений?',
-        component: QuizItemCheckbox,
+        component: STEP_TYPE.checkbox,
         fieldsData: {
             values: [
                 {

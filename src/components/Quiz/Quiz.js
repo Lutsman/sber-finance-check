@@ -3,7 +3,6 @@ import * as React from 'react';
 import {Svg} from "../common/Svg";
 import {Facts} from "../Facts/Facts";
 
-import {STEPS} from "./constants";
 import logoIcon from "../../images/logo-icon.png";
 import iconArrow from "../../images/icon-arrow.svg";
 
@@ -12,7 +11,7 @@ export const Quiz = props => {
         activeStep, data, setApprove, setData, nextStep, prevStep,
         nextStepDisable, prevStepDisable, isApproved
     } = props;
-    const {title, component: QuizStep, question, fieldsData} = STEPS[activeStep];
+    const {title, component: QuizStep, question, fieldsData} = activeStep;
 
     return (
         <div className="tm-main">
