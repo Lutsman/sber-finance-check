@@ -628,9 +628,13 @@ input.radioId:checked + .tm-radio-button {
     }
 
     .tm-links-alt {
+
+      div {
+        padding: 5px 0;
+      }
+
       a {
         color: #fff;
-        padding: 10px 0;
       }
     }
 
@@ -734,4 +738,8 @@ input.radioId:checked + .tm-radio-button {
     transform: rotate(-5deg);
     z-index: -1;
   }
+}
+
+.tm-margin-megalarge {
+  margin-top: 110px;
 }
