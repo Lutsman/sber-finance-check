@@ -1,10 +1,37 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
+
 import {RoundProgressbar} from "../RoundProgressbar/RoundProgressbar";
-import {quizFillingSelector} from "../../selectors/quiz";
+import {isCompleteSelector, quizFillingSelector} from "../../selectors/quiz";
 
 export const SidebarQuizComponent = props => {
-    const {percentage} = props;
+    const {percentage, isComplete} = props;
+    const getIndicatorContent = () => {
+        if (isComplete) {
+            return (
+                <div className="tm-indicator__content">
+                    Рейтинг ваших финансов:
+                    <span>АА+</span>
+                </div>
+            );
+        }
+
+        if (percentage) {
+            return (
+                <div className="tm-indicator__content">
+                    Ваша форма заполнена на:
+                    <span>{percentage}%</span>
+                </div>
+            );
+        } else {
+            return (
+                <div className="tm-indicator__content">
+                    <i className="fa fa-play" aria-hidden="true"/>
+                </div>
+            );
+        }
+
+    };
 
     return (
         <div
@@ -18,15 +45,7 @@ export const SidebarQuizComponent = props => {
                 </div>
                 <div className="uk-flex uk-flex-center tm-indicator">
                     <RoundProgressbar percentage={percentage}>
-                        {percentage ?
-                            <div className="tm-indicator__content">
-                                Ваша форма заполнена на:
-                                <span>{percentage}%</span>
-                            </div> :
-                            <div className="tm-indicator__content">
-                                <i className="fa fa-play" aria-hidden="true"/>
-                            </div>
-                        }
+                        {getIndicatorContent()}
                     </RoundProgressbar>
                 </div>
 
@@ -46,6 +65,7 @@ export const SidebarQuizComponent = props => {
 
 const mapStateToProps = state => ({
     percentage: quizFillingSelector(state),
+    isComplete: isCompleteSelector(state),
 });
 
 export const SidebarQuiz = connect(mapStateToProps)(SidebarQuizComponent);

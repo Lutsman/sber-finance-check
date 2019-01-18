@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import people from "../../images/people.png";
-
 export class QuizItemRadio extends React.Component {
     componentDidMount() {
         const {data, fieldsData, setApprove} = this.props;

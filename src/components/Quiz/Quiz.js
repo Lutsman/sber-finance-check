@@ -10,19 +10,19 @@ import iconArrow from "../../images/icon-arrow.svg";
 export const Quiz = props => {
     const {
         activeStep, data, setApprove, setData, nextStep, prevStep,
-        nextStepDisable, prevStepDisable
+        nextStepDisable, prevStepDisable, isApproved
     } = props;
     const {title, component: QuizStep, question, fieldsData} = STEPS[activeStep];
 
     return (
         <div className="tm-main">
             <div className="tm-content-wrapper uk-flex uk-flex-wrap uk-flex-stretch">
-                <div className="tm-content-decoration"></div>
+                <div className="tm-content-decoration"/>
                 <div className="tm-content uk-child-width-1-1 uk-flex uk-flex-wrap uk-flex-between">
                     <div>
                         <div className="tm-content-header">
                             <div className="uk-container uk-flex uk-flex-middle uk-flex-between">
-                                <a className="uk-logo uk-flex uk-flex-middle">
+                                <a className="uk-logo uk-flex uk-flex-middle" href="/">
                                     <img src={logoIcon} alt="" className="uk-margin-small-right"/>
                                     <span>{title}</span>
                                 </a>
@@ -49,7 +49,7 @@ export const Quiz = props => {
 
                                     <QuizStep setData={setData} setApprove={setApprove} data={data}
                                               fieldsData={fieldsData}/>
-                                    <Facts/>
+                                    {isApproved && <Facts/>}
                                 </div>
                             </div>
                         </div>
