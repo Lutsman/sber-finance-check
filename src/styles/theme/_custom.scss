@@ -270,6 +270,10 @@ h2 {
   overflow-x: hidden;
   overflow-y: hidden;
   padding: 20px 70px 20px 0;
+
+  &.tm-main-start {
+    background-color: $global-background;
+  }
 }
 
 .tm-content-wrapper {
