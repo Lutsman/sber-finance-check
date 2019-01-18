@@ -27,7 +27,7 @@ export const Quiz = props => {
                                     <span>{title}</span>
                                 </a>
 
-                                <button className="tm-button-continue tm-border-rounded uk-button uk-button-primary"
+                                <button className="tm-button-continue tm-border-rounded uk-visible@s uk-button uk-button-primary"
                                         onClick={nextStep}
                                         disabled={nextStepDisable}>
                                     Продолжить <Svg src={iconArrow} alt=""/>
@@ -39,7 +39,7 @@ export const Quiz = props => {
                                 <div className="uk-flex uk-flex-between">
                                     <h2>{question}</h2>
 
-                                    <button className="tm-button-next tm-border-rounded uk-button uk-button-default"
+                                    <button className="tm-button-next tm-border-rounded uk-visible@s uk-button uk-button-default"
                                             onClick={prevStep}
                                             disabled={prevStepDisable}>
                                         Назад <Svg src={iconArrow} alt=""/>
@@ -57,7 +57,19 @@ export const Quiz = props => {
 
                     <div className="tm-content-footer">
                         <div className="uk-container">
-                            <div className="uk-text-meta">Источник: Премьер</div>
+                            <div className="uk-text-meta uk-visible@s">Источник: Премьер</div>
+                            <div className="uk-hidden@s uk-flex uk-flex-wrap uk-flex-between">
+                                <button className="tm-button-next tm-border-rounded uk-button uk-button-default"
+                                        onClick={prevStep}
+                                        disabled={prevStepDisable}>
+                                    Назад <Svg src={iconArrow} alt=""/>
+                                </button>
+                                <button className="tm-button-continue tm-border-rounded uk-button uk-button-primary"
+                                        onClick={nextStep}
+                                        disabled={nextStepDisable}>
+                                    Продолжить <Svg src={iconArrow} alt=""/>
+                                </button>
+                            </div>
                         </div>
                     </div>
 

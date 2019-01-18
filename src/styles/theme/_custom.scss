@@ -554,3 +554,49 @@ input.radioId:checked + .tm-radio-button {
 
   }
 }
+
+@media (max-width: 959px) {
+  html {
+    background: #ffffff;
+  }
+
+  .tm-main {
+    padding: 0;
+  }
+
+  .tm-content-wrapper {
+    margin: 0 auto;
+  }
+
+  .tm-button-continue {
+    margin-bottom: 0 !important;
+  }
+
+  body {
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 639px) {
+
+  .tm-answer {
+    font-size: $font-size-small;
+  }
+
+  .uk-logo {
+    font-size:$font-size-small;
+  }
+
+  .tm-content-header {
+    padding: 20px 0;
+  }
+
+  h2 {
+    font-size: $font-size-global;
+    margin: 0 0 10px 0;
+  }
+
+  .tm-fact {
+    padding: 30px 0 0;
+  }
+}

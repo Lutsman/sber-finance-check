@@ -9,7 +9,7 @@ export const FactsComponent = props => {
           <div className="uk-text-muted">А вы знали, что:</div>
 
           <div className="uk-flex-between uk-grid-large" data-uk-grid>
-              <div className="uk-width-2-5">
+              <div className="uk-width-1-1 uk-width-2-5@s ">
                   <div className="tm-font-light uk-text-lead uk-text-primary">46%</div>
                   <div className="tm-text-large">всех клиентов тратят практически всю свою
                       зарплату.
@@ -17,7 +17,7 @@ export const FactsComponent = props => {
                   </div>
               </div>
 
-              <div className="uk-width-3-5">
+              <div className="uk-width-1-1 uk-width-3-5@s">
                   <img src={people} alt=""/>
               </div>
           </div>
