@@ -9,7 +9,7 @@ import btnFingerprint from "../../images/btn-fingerprint.png";
 export const QuizStartComponent = props => {
     const {quizInit} = props;
     return (
-        <div className="tm-main">
+        <div className="tm-main tm-main-start">
             <div className="tm-content-wrapper tm-content-start uk-flex uk-flex-wrap uk-flex-stretch">
 
                 <div className="tm-content tm-start-only uk-padding uk-padding-remove-horizontal">
