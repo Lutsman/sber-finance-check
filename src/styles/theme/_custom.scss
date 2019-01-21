@@ -237,19 +237,6 @@ h2 {
   height: 244px;
 }
 
-.tm-progressbar__indicator {
-  svg {
-    path {
-      stroke-width: 3px;
-    }
-
-  }
-}
-
-.CircularProgressbar .CircularProgressbar-path {
-  stroke: #ffffff;
-}
-
 .tm-indicator__content {
   font-size: $font-size-small;
 
@@ -259,7 +246,7 @@ h2 {
     font-weight: $font-weight-thin;
   }
 
-  .fa-play {
+  .fa {
     font-size: 30px;
   }
 }
