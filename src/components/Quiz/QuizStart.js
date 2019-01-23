@@ -12,14 +12,14 @@ export const QuizStartComponent = props => {
         <div className="tm-main tm-main-start">
             <div className="tm-content-wrapper tm-content-start uk-flex uk-flex-wrap uk-flex-stretch">
 
-                <div className="tm-content tm-start-only uk-padding uk-padding-remove-horizontal">
-                    <div className="uk-container uk-padding-large uk-padding-remove-top uk-text-center">
+                <div className="tm-content tm-start-only uk-padding uk-padding-remove-horizontal uk-flex uk-flex-column uk-flex-stretch">
+                    <div className="uk-container uk-padding-large uk-padding-remove-top uk-text-center uk-flex uk-flex-column uk-flex-around">
 
-                        <div className="uk-margin-large-bottom">
+                        <div className="">
                             <h1 className="tm-text-scaner">СберСканер</h1>
                             <div className="tm-text-subscaner">Сканер вашего финансового здоровья</div>
                         </div>
-                        <p className="uk-margin-large-bottom">Ответьте на несколько вопросов чтобы продиагностировать
+                        <p className="">Ответьте на несколько вопросов чтобы продиагностировать
                             ваше финансовое здоровье</p>
                         <div>
                             <div className="tm-scale-header-alt">

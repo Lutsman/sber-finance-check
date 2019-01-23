@@ -57,19 +57,19 @@ export const Quiz = props => {
                     <div className="tm-content-footer">
                         <div className="uk-container">
                             <div className="uk-text-meta uk-visible@s">Источник: Премьер</div>
-                            <div className="uk-hidden@s uk-flex uk-flex-wrap uk-flex-between">
-                                <button className="tm-button-next tm-border-rounded uk-button uk-button-default"
-                                        onClick={prevStep}
-                                        disabled={prevStepDisable}>
-                                    Назад <Svg src={iconArrow} alt=""/>
-                                </button>
-                                <button className="tm-button-continue tm-border-rounded uk-button uk-button-primary"
-                                        onClick={nextStep}
-                                        disabled={nextStepDisable}>
-                                    Продолжить <Svg src={iconArrow} alt=""/>
-                                </button>
-                            </div>
                         </div>
+                    </div>
+                    <div className="uk-hidden@s tm-bottom-panel uk-flex uk-flex-wrap uk-flex-between uk-position-fixed uk-position-bottom">
+                        <button className="tm-button-next tm-border-rounded uk-button uk-button-default"
+                                onClick={prevStep}
+                                disabled={prevStepDisable}>
+                            Назад <Svg src={iconArrow} alt=""/>
+                        </button>
+                        <button className="tm-button-continue tm-border-rounded uk-button uk-button-primary"
+                                onClick={nextStep}
+                                disabled={nextStepDisable}>
+                            Продолжить <Svg src={iconArrow} alt=""/>
+                        </button>
                     </div>
 
                 </div>
