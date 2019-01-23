@@ -5,6 +5,7 @@ import {Facts} from "../Facts/Facts";
 
 import logoIcon from "../../images/logo-icon.png";
 import iconArrow from "../../images/icon-arrow.svg";
+import {MobileProdressbar} from "../MobileProgressbar/MobileProgressbar";
 
 export const Quiz = props => {
     const {
@@ -33,6 +34,7 @@ export const Quiz = props => {
                                 </button>
                             </div>
                         </div>
+                        <MobileProdressbar/>
                         <div className="tm-content-inner">
                             <div className="uk-container">
                                 <div className="uk-flex uk-flex-between">
