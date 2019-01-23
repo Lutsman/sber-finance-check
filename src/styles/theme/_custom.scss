@@ -555,6 +555,20 @@ input.radioId:checked + .tm-radio-button {
     background: #ffffff;
   }
 
+  .tm-content-header {
+    border-bottom-color: transparent;
+  }
+
+  .tm-progressbar-line___outer {
+    height: 1px;
+    background-color: #a0dade;
+  }
+
+  .tm-progressbar-line__inner {
+    height: 3px;
+    background-color: #19bb4f;
+  }
+
   .tm-main {
     padding: 0;
 
