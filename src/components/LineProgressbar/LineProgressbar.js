@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './LineProgressbar.scss';
 
 export const LineProgressbar = props => {
     const {percentage} = props;
