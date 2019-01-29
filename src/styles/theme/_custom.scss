@@ -760,3 +760,131 @@ input.radioId:checked + .tm-radio-button {
   border-top: 1px solid #eee;
   padding-top: 10px;
 }
+
+
+
+
+/////////
+
+.tm-final {
+  font-size: $font-size-small;
+  font-weight: $font-weight-thin;
+
+  .tm-text-transparent {
+    color: rgba(34, 41, 76, 0.5);
+  }
+
+  h1 {
+    font-family: $font-family-global;
+    font-size: 26px;
+    font-weight: $font-weight-thick;
+    color: $font-color-global;
+    margin: 10px 0 20px;
+  }
+
+  h2 {
+    font-family: $font-family-global;
+    font-size: 20px;
+    font-weight: $font-weight-thick;
+    color: $font-color-global;
+    margin: 0 0 10px 0;
+  }
+
+  p {
+    color: #9094A5;
+  }
+
+  .tm-button-details {
+    color: $font-color-global;
+    border: 1px solid #9094a5;
+    font-weight: $font-weight-thin;
+    border-radius: 3px;
+
+    &:hover, &:focus, &:active {
+      color: darken($font-color-global, 30%);
+      border-color: darken(#9094a5, 30%);
+    }
+  }
+
+  .tm-icon-warning {
+    position: relative;
+    padding-left: 25px;
+    margin-top: 20px;
+
+    color: rgba(34, 41, 76, 0.5);
+
+    &:before, &:after {
+      position: absolute;
+      display: block;
+    }
+
+    &:before {
+      top: 2px;
+      left: 8px;
+      font-family: FontAwesome;
+      font-size: 12px;
+      color: #EB5A80;
+      content: '\F12A';
+    }
+
+    &:after {
+      top: 0;
+      left: 0;
+
+      width: 16px;
+      height: 16px;
+      border: 2px solid #EB5A80;
+      border-radius: 50%;
+      content: '';
+    }
+  }
+
+  .tm-button-order {
+    position: relative;
+    //padding: 0 30px;
+    width: 100%;
+    min-width: 290px;
+    font-weight: $font-weight-thick;
+
+    .tm-icon-arrow {
+      position: absolute;
+      display: block;
+      top: 40%;
+      right: 10px;
+
+    }
+  }
+
+  .uk-modal-body {
+    //padding: 40px 100px;
+    border-radius: 20px;
+  }
+
+  .uk-modal-close {
+    padding: 0 50px;
+    font-weight: $font-weight-thick;
+  }
+
+  input {
+    color: rgba(34, 41, 76, 0.5);
+  }
+
+  @media (max-width: 639px) {
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .tm-button-order {
+      min-width: 240px;
+      padding: 0;
+      font-size: 12px;
+
+      .tm-icon-arrow {
+        display: none;
+      }
+
+    }
+  }
+}
