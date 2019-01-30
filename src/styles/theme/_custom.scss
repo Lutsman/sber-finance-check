@@ -855,6 +855,29 @@ input.radioId:checked + .tm-radio-button {
     }
   }
 
+  .tm-modal-close {
+    top: 20px;
+    right: 20px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+
+      line {
+        stroke-width: 2px;
+      }
+    }
+  }
+
+  .tm-button-modal-close {
+    font-weight: $font-weight-thick;
+    color: #6b6f73;
+
+    &:hover, &:focus, &:active {
+      color: darken(#6b6f73, 30%);
+    }
+  }
+
   .uk-modal-body {
     //padding: 40px 100px;
     border-radius: 20px;

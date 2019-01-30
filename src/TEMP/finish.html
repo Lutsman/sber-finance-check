@@ -16,6 +16,9 @@
     <!-- UIkit JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
+
+    <!-- НЕ ПЕРЕНОСИТЬ, ЭТО ДЛЯ РАЗРАБОТКИ ТОЛЬКО -->
+    <link rel="stylesheet" href="../styles/styles.css"/>
 </head>
 <body>
 
@@ -100,15 +103,22 @@
     <!--modals-->
     <div class="tm-final" id="formModal" data-uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-flex-center">
+            <button class="tm-modal-close uk-modal-close-default" type="button" uk-close></button>
             <div class="uk-width-2-3@s uk-margin-large-top">
                 <h2 class="uk-modal-title">Оставьте ваш номер телефона для обратной связи</h2>
                 <form action="#">
-                    <div class="uk-margin-medium-top uk-margin-xlarge-bottom uk-text-left">
+                    <div class="uk-margin-medium-top uk-margin-large-bottom uk-text-left">
                         <div class="tm-text-transparent tm-font-tiny uk-margin-small-bottom">Номер телефона</div>
                         <input class="uk-input" type="text" value="+7">
                     </div>
-                <button class="tm-border-rounded uk-button uk-button-primary" data-uk-toggle="target: #successModal" type="button">Отправить заявку <img
-                        class="tm-icon-arrow" src="images/icon-arrow.svg" alt="" data-uk-svg/></button>
+                    <div class="uk-flex uk-flex-column uk-flex-middle uk-child-width-1-2@s">
+                        <button class="tm-border-rounded uk-button uk-button-primary" data-uk-toggle="target: #successModal"
+                                type="button">Отправить заявку <img
+                                class="tm-icon-arrow" src="images/icon-arrow.svg" alt="" data-uk-svg/></button>
+                        <button class="tm-border-rounded tm-button-modal-close uk-modal-close uk-button uk-button-default uk-margin-top"
+                                type="button">Закрыть
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -116,11 +126,14 @@
 
     <div class="tm-final" id="successModal" data-uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-flex-center">
+            <button class="tm-modal-close uk-modal-close-default" type="button" uk-close></button>
             <div class="uk-width-2-3@s">
                 <img class="" src="/images/modal-success.png" alt="">
                 <h2 class="uk-modal-title uk-margin-top">Спасибо, ваша заявка принята!</h2>
-                <p class="tm-text-transparent uk-margin-top">Ваш клиентский менеджер свяжется с вами втечение 2 рабочих дней</p>
-                <button class="tm-border-rounded uk-modal-close uk-button uk-button-primary uk-margin-top" type="button">Закрыть
+                <p class="tm-text-transparent uk-margin-top">Ваш клиентский менеджер свяжется с вами втечение 2 рабочих
+                    дней</p>
+                <button class="tm-border-rounded uk-modal-close uk-button uk-button-primary uk-margin-top"
+                        type="button">Закрыть
                 </button>
             </div>
         </div>
@@ -128,6 +141,7 @@
 
     <div class="tm-final" id="bugetModal" data-uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-flex-center">
+            <button class="tm-modal-close uk-modal-close-default" type="button" uk-close></button>
             <div class="uk-width-2-3@s">
                 <img class="" src="/images/illustration-budget-bad.png" alt="">
                 <img class="uk-hidden" src="/images/illustration-budget-normal.png" alt="">
@@ -145,6 +159,7 @@
 
     <div class="tm-final" id="financeModal" data-uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-flex-center">
+            <button class="tm-modal-close uk-modal-close-default" type="button" uk-close></button>
             <div class="uk-width-2-3@s">
                 <img class="" src="/images/illustration-safety-bad.png" alt="">
                 <img class="uk-hidden" src="/images/illustration-safety-normal.png" alt="">
@@ -161,6 +176,7 @@
 
     <div class="tm-final" id="investModal" data-uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-flex-center">
+            <button class="tm-modal-close uk-modal-close-default" type="button" uk-close></button>
             <div class="uk-width-2-3@s">
                 <img class="" src="/images/illustration-investments-bad.png" alt="">
                 <img class="uk-hidden" src="/images/illustration-investments-normal.png" alt="">
