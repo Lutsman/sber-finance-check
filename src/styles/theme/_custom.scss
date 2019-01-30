@@ -770,6 +770,10 @@ input.radioId:checked + .tm-radio-button {
   font-size: $font-size-small;
   font-weight: $font-weight-thin;
 
+  .uk-modal-dialog {
+    opacity: 1;
+  }
+
   .tm-text-transparent {
     color: rgba(34, 41, 76, 0.5);
   }
