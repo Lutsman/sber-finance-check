@@ -23,7 +23,7 @@ export class QuizSummaryItem extends React.Component {
         return (
             <div className="uk-child-width-expand@s uk-flex-middle uk-flex-center" data-uk-grid-margin data-uk-grid>
                 <div className="uk-width-1-4@s">
-                    <div>
+                    <div className="uk-text-center">
                         <img src="https://via.placeholder.com/136x136" alt=""/>
                     </div>
                 </div>
@@ -39,26 +39,28 @@ export class QuizSummaryItem extends React.Component {
                         Подробнее
                     </button>
                     <Modal open={open} onClose={this.onCloseModal}>
-                        <div className="uk-width-2-3@s">
-                            <img className="uk-hidden" src="../../images/illustration-budget-bad.png"/>
-                            <img src={budgetNormal}/>
-                            <img className="uk-hidden" src="../../images/illustration-budget-good.png"/>
-                            <h2 className="uk-modal-title uk-margin-top">Бюджет и расходы</h2>
-                            <div className="uk-margin-large-bottom tm-text-transparent">
-                                <p>
-                                    Откладывая деньги, вы создаёте финансовую подушку безопасности на будущее.
-                                </p>
-                                <p>
-                                    С сервисом <span className="uk-text-primary">&#171;Бюджет&#187;</span> в
-                                    Сбербанк Онлайн вы сможете контролировать расходы и начать откладывать
-                                    деньги.
-                                </p>
+                        <div className="tm-final">
+                            <div className="uk-width-2-3@s uk-margin-auto uk-text-center">
+                                <img className="uk-hidden" src="../../images/illustration-budget-bad.png"/>
+                                <img src={budgetNormal}/>
+                                <img className="uk-hidden" src="../../images/illustration-budget-good.png"/>
+                                <h2 className="uk-modal-title uk-margin-top">Бюджет и расходы</h2>
+                                <div className="uk-margin-large-bottom tm-text-transparent">
+                                    <p>
+                                        Откладывая деньги, вы создаёте финансовую подушку безопасности на будущее.
+                                    </p>
+                                    <p>
+                                        С сервисом <a href="#" className="tm-link-modal">Бюджет</a> в
+                                        Сбербанк Онлайн вы сможете контролировать расходы и начать откладывать
+                                        деньги.
+                                    </p>
+                                </div>
+                                <button
+                                    className="uk-modal-close uk-button uk-button-primary"
+                                    onClick={this.onCloseModal}>
+                                    Закрыть
+                                </button>
                             </div>
-                            <button
-                                className="tm-border-rounded uk-button uk-button-primary"
-                                onClick={this.onCloseModal}>
-                                Закрыть
-                            </button>
                         </div>
                     </Modal>
                 </div>

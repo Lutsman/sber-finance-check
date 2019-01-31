@@ -730,6 +730,10 @@ input.radioId:checked + .tm-radio-button {
     .tm-content-wrapper {
       margin: 0 auto;
     }
+
+    &.tm-summary {
+      padding-right: 134px;
+    }
   }
 
 }
@@ -849,6 +853,7 @@ input.radioId:checked + .tm-radio-button {
     width: 100%;
     min-width: 290px;
     font-weight: $font-weight-thick;
+    border-radius: 500px;
 
     .tm-icon-arrow {
       position: absolute;
@@ -859,41 +864,72 @@ input.radioId:checked + .tm-radio-button {
     }
   }
 
-  .tm-modal-close {
-    top: 20px;
-    right: 20px;
 
-    svg {
-      width: 16px;
-      height: 16px;
-
-      line {
-        stroke-width: 2px;
-      }
-    }
-  }
 
   .tm-button-modal-close {
     font-weight: $font-weight-thick;
     color: #6b6f73;
+    border-radius: 500px;
 
     &:hover, &:focus, &:active {
       color: darken(#6b6f73, 30%);
     }
   }
 
-  .uk-modal-body {
-    //padding: 40px 100px;
-    border-radius: 20px;
-  }
-
   .uk-modal-close {
     padding: 0 50px;
     font-weight: $font-weight-thick;
+    border-radius: 500px;
+  }
+
+  .tm-link-modal {
+    position: relative;
+    color: $font-color-primary;
+    padding: 0 7px;
+
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      top: -1px;
+    }
+
+    &:before {
+      content: '\00ab';
+      left: 0;
+    }
+
+    &:after {
+      content: '\00bb';
+      right: 0;
+    }
+  }
+
+  .tm-header-divider {
+    position: relative;
+    left: -15px;
+    width: 110%;
+    height: 2px;
+    background-color: $global-background;
+    margin-top: 10px;
   }
 
   input {
     color: rgba(34, 41, 76, 0.5);
+  }
+
+  @media (min-width: 960px) and (max-width: 1080px) {
+    .tm-button-details {
+      padding: 0 5px;
+    }
+
+    .tm-button-order {
+      min-width: 250px;
+      padding: 0 10px;
+
+      .svg-wrapper {
+        display: none;
+      }
+    }
   }
 
   @media (max-width: 639px) {
@@ -915,3 +951,48 @@ input.radioId:checked + .tm-radio-button {
     }
   }
 }
+
+
+//SYSTEM
+.styles_modal__gNwvD {
+  padding: 40px;
+  background: #ffffff;
+  background-clip: padding-box;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  margin: auto;
+  border-radius: 20px;
+}
+
+.styles_closeButton__20ID4 {
+  cursor: pointer;
+
+  svg {
+    fill: #6b6f73;
+  }
+
+  &:hover, &:focus, &:active {
+    svg {
+      fill: darken(#6b6f73, 30%);
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .styles_modal__gNwvD {
+    padding: 20px;
+  }
+}
+
+//.tm-modal-close {
+//  top: 20px;
+//  right: 20px;
+//
+//  svg {
+//    width: 16px;
+//    height: 16px;
+//
+//    line {
+//      stroke-width: 2px;
+//    }
+//  }
+//}

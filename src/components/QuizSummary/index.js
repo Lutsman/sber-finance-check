@@ -29,12 +29,13 @@ export class QuizSummary extends React.Component {
         const items = itemsData.map((item) => <QuizSummaryItem key={item}/>);
 
         return (
-            <div className="tm-main">
+            <div className="tm-main tm-summary">
                 <div className="tm-content-wrapper uk-flex uk-flex-wrap uk-flex-stretch">
 
                     <div className="tm-content">
-                        <div className="tm-final uk-container uk-padding">
-                            <div className="tm-text-transparent">Результат финансового сканирования</div>
+                        <div className="tm-final uk-container">
+                            <div className="tm-text-transparent uk-margin-top">Результат финансового сканирования</div>
+                            <div className="tm-header-divider uk-hidden@s"></div>
                             <h1 className="uk-h1">Поздравляем! Ваши финансы почти в порядке</h1>
 
                             {items}
@@ -46,16 +47,17 @@ export class QuizSummary extends React.Component {
                                     </div>
                                     <div className="uk-width-1-3@s uk-flex uk-flex-right">
                                         <button
-                                            className="tm-button-order tm-border-rounded uk-button uk-button-primary"
+                                            className="tm-button-order uk-button uk-button-primary"
                                             onClick={this.onOpenModal}>
                                             Записаться на консультацию
                                             <Svg className="tm-icon-arrow" src={iconArrow}/>
                                         </button>
                                         <Modal open={open} onClose={this.onCloseModal}>
-                                            <div className="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-flex-center">                                             <div className="uk-width-2-3@s uk-margin-large-top">
+                                            <div className="tm-final uk-text-center uk-flex uk-flex-center">
+                                                <div className="uk-width-2-3@s uk-margin-top uk-margin-large-top@s">
                                                     <h2 className="uk-modal-title">Оставьте ваш номер телефона для обратной связи</h2>
                                                     <form onSubmit={this.onSubmit}>
-                                                        <div className="uk-margin-medium-top uk-margin-large-bottom uk-text-left">
+                                                        <div className="uk-margin-medium-top@s uk-margin-large-bottom uk-text-left">
                                                             <div className="tm-text-transparent tm-font-tiny uk-margin-small-bottom">
                                                                 Номер телефона
                                                             </div>
@@ -67,7 +69,7 @@ export class QuizSummary extends React.Component {
                                                                 <Svg className="tm-icon-arrow" src={iconArrow}/>
                                                             </button>
                                                             <button
-                                                                className="tm-border-rounded tm-button-modal-close uk-button uk-button-default uk-margin-top"
+                                                                className="tm-button-modal-close uk-button uk-button-default uk-margin-top"
                                                                 onClick={this.onCloseModal}
                                                                 type="button">
                                                                 Закрыть
