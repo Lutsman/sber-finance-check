@@ -1,7 +1,9 @@
 import * as React from 'react';
 import CircularProgressbar from 'react-circular-progressbar';
+
 import 'react-circular-progressbar/dist/styles.css';
-import './RoundProgressbar.scss';
+
+import './style.scss';
 
 export const RoundProgressbar = props => {
     const {children, ...otherProps} = props;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import {SidebarQuiz} from "../Sidebar/SidebarQuiz";
-import {QuizOntainer} from "../Quiz/QuizСontainer";
+import {QuizOntainer} from "../Quiz";
 
 export const Inner = props => {
     return ([

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom'
 
 import {Inner} from "./routes/Inner";
-import {OffCanvas} from "./OffCanvas/OffCanvas";
+import {OffCanvas} from "./OffCanvas";
 import {Start} from "./routes/Start";
 
 export class App extends Component {

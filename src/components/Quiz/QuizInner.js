@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import {Svg} from "../Svg/Svg";
-import {Facts} from "../Facts/Facts";
+import {Svg} from "../Svg";
+import {Facts} from "../Facts";
+import {MobileProgressbar} from "../MobileProgressbar";
 
 import logoIcon from "../../images/logo-icon.png";
 import iconArrow from "../../images/icon-arrow.svg";
-import {MobileProdressbar} from "../MobileProgressbar/MobileProgressbar";
 
-export const Quiz = props => {
+export const QuizInner = props => {
     const {
         activeStep, data, setApprove, setData, nextStep, prevStep,
         nextStepDisable, prevStepDisable, isApproved, QuizItem
@@ -34,7 +34,7 @@ export const Quiz = props => {
                                 </button>
                             </div>
                         </div>
-                        <MobileProdressbar/>
+                        <MobileProgressbar/>
                         <div className="tm-content-inner">
                             <div className="uk-container">
                                 <div className="uk-flex uk-flex-between">

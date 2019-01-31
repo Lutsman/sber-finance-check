@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {Quiz} from './Quiz';
+import {QuizInner} from './QuizInner';
 import {
     activeStepSelector, activeStepIndexSelector,
     approveSelector,
@@ -11,10 +11,10 @@ import {
     quizItemSelector,
 } from "../../selectors/quiz";
 import {activeStepApprove, activeStepSet, dataSet, init} from "../../AC/quiz";
-import {QuizSummary} from "./QuizSummary";
+import {QuizSummary} from "../QuizSummary";
 
 export const QuizContainerComponent = props => {
-    return props.isComplete ? (<QuizSummary reinit={props.init} />) : (<Quiz {...props}/>);
+    return props.isComplete ? (<QuizSummary reinit={props.init} />) : (<QuizInner {...props}/>);
 };
 
 const mapStateToProps = state => ({
