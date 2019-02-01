@@ -12,8 +12,8 @@ export class QuizSummaryItem extends React.Component {
 
         return (
             <div className="uk-child-width-expand@s uk-flex-middle uk-flex-center" data-uk-grid-margin data-uk-grid>
-                <div className="uk-width-1-4@s">
-                    <div className="uk-text-center tm-small-progressbar">
+                <div className="uk-width-auto@s uk-width-1-4@l uk-flex uk-flex-center">
+                    <div className="tm-small-progressbar">
                         <RoundProgressbar percentage={percentage}>
                             <div className="tm-indicator__content">
                                 <span>{percentage}%</span>
@@ -26,7 +26,7 @@ export class QuizSummaryItem extends React.Component {
                     <div>Ваши финансы под контролем на <span>90%</span></div>
                     <div className="tm-icon-warning uk-hidden">Риск получения минимальной пенсии</div>
                 </div>
-                <div className="uk-flex uk-flex-right@s">
+                <div className="uk-flex uk-flex-center uk-flex-right@s">
                     <QuizSummaryDecription/>
                 </div>
             </div>

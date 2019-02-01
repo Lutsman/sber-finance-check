@@ -26,7 +26,7 @@ export class QuizSummary extends React.Component {
                                     <div>
                                         Мы знаем как минимизировать риски и сделать финансовое здоровье ещё лучше
                                     </div>
-                                    <div className="uk-width-1-3@s uk-flex uk-flex-right">
+                                    <div className="uk-width-1-3@s uk-flex uk-flex-center uk-flex-right@s">
                                         <QuizSummaryForm/>
                                     </div>
                                 </div>

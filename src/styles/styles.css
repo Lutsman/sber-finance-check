@@ -582,6 +582,9 @@ input.radioId:checked + .tm-radio-button {
     background-color: #19bb4f;
     background-image: none;
     padding-bottom: 0; } }
+@media (min-width: 960px) and (max-width: 1139px) {
+  .tm-summary {
+    padding: 20px 25px 20px 0; } }
 @media (min-width: 1140px) {
   .tm-main {
     padding-right: 334px; }
