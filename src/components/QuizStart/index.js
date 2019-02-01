@@ -28,8 +28,8 @@ export const QuizStartComponent = props => {
                             <div className="uk-flex uk-flex-center">
                                 <div className="tm-button-start-wrapper">
                                     <Link to="/inner" onClick={quizInit} className="tm-button-start uk-button">
-                                        <img className="uk-border-circle uk-visible@s" src={btnPower} alt=""/>
-                                        <img className="uk-border-circle uk-hidden@s" src={btnFingerprint} alt=""/>
+                                        <img className="uk-border-circle uk-visible@s" src={btnPower}/>
+                                        <img className="uk-border-circle uk-hidden@s" src={btnFingerprint}/>
                                     </Link>
                                 </div>
                             </div>
