@@ -13,7 +13,7 @@ export class QuizSummaryItem extends React.Component {
         return (
             <div className="uk-child-width-expand@s uk-flex-middle uk-flex-center" data-uk-grid-margin data-uk-grid>
                 <div className="uk-width-1-4@s">
-                    <div className="uk-text-center">
+                    <div className="uk-text-center tm-small-progressbar">
                         <RoundProgressbar percentage={percentage}>
                             <div className="tm-indicator__content">
                                 <span>{percentage}%</span>

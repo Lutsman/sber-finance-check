@@ -913,6 +913,26 @@ input.radioId:checked + .tm-radio-button {
     margin-top: 10px;
   }
 
+  .tm-small-progressbar {
+    width: 136px;
+    height: 136px;
+
+    .CircularProgressbar .CircularProgressbar-trail {
+      stroke: #cbfff5;
+      stroke-width: 8px;
+    }
+
+    .CircularProgressbar .CircularProgressbar-path {
+      stroke: #4DB4D0;
+      stroke-width: 8px;
+    }
+
+    .tm-indicator__content span {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+
   input {
     color: rgba(34, 41, 76, 0.5);
   }

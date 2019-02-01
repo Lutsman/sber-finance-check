@@ -21,7 +21,7 @@ export class QuizSummary extends React.Component {
 
                             {items}
 
-                            <div className="uk-margin-large-top uk-padding uk-padding-remove-horizontal">
+                            <div className="uk-padding uk-padding-remove-horizontal">
                                 <div className="uk-child-width-1-2@s uk-child-width-1-1 uk-flex-between" data-uk-grid>
                                     <div>
                                         Мы знаем как минимизировать риски и сделать финансовое здоровье ещё лучше

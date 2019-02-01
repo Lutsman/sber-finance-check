@@ -705,6 +705,18 @@ input.radioId:checked + .tm-radio-button {
     height: 2px;
     background-color: #19bb4f;
     margin-top: 10px; }
+  .tm-final .tm-small-progressbar {
+    width: 136px;
+    height: 136px; }
+    .tm-final .tm-small-progressbar .CircularProgressbar .CircularProgressbar-trail {
+      stroke: #cbfff5;
+      stroke-width: 8px; }
+    .tm-final .tm-small-progressbar .CircularProgressbar .CircularProgressbar-path {
+      stroke: #4DB4D0;
+      stroke-width: 8px; }
+    .tm-final .tm-small-progressbar .tm-indicator__content span {
+      font-size: 28px;
+      font-weight: 700; }
   .tm-final input {
     color: rgba(34, 41, 76, 0.5); }
   @media (min-width: 960px) and (max-width: 1080px) {
