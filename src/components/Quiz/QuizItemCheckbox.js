@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import {Checkbox} from '../common/Checkbox';
-import {isEmptyObj} from "../common/utils";
+import {isEmptyObj} from "../../utils";
 
 export class QuizItemCheckbox extends React.Component {
     componentDidMount() {

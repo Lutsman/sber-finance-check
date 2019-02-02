@@ -5,3 +5,5 @@ export const isEmptyObj = obj => {
 
     return true;
 };
+
+export const randomId = () => (Date.now() + Math.random()).toString();

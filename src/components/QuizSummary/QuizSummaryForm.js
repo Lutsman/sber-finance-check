@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Svg} from "../Svg";
+import {Svg} from "../common/Svg";
 import iconArrow from "../../images/icon-arrow.svg";
 import Modal from "react-responsive-modal";
 

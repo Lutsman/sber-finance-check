@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Svg} from "../Svg";
+import {Svg} from "../common/Svg";
 import {Facts} from "../Facts";
 import {MobileProgressbar} from "../MobileProgressbar";
 

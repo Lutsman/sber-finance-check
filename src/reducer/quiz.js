@@ -1,5 +1,5 @@
 import {QUIZ_ACTIVE_STEP_APPROVE, QUIZ_ACTIVE_STEP_SET, QUIZ_DATA_SET, QUIZ_INIT} from "../constants";
-import {isEmptyObj} from "../components/common/utils";
+import {isEmptyObj} from "../utils";
 import {STEPS} from "../components/Quiz/constants";
 
 export const INITIAL_STATE = {
