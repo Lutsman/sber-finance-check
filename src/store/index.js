@@ -3,6 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 
 import {sagas} from '../midlwares/sagas';
+import {randomId} from "../midlwares/randomId";
 import {rootReducer} from "../reducer";
 
 const composeEnhancers =
@@ -13,7 +14,7 @@ const composeEnhancers =
         }) : compose;
 
 const sagaMiddleware = createSagaMiddleware();
-let middlewares = [sagaMiddleware];
+let middlewares = [sagaMiddleware, randomId];
 
 if (process.env.NODE_ENV !== 'production') {
     middlewares.push(logger);

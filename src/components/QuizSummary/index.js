@@ -1,13 +1,21 @@
 import * as React from 'react';
+import {connect} from 'react-redux';
 
+import {LoadingSpinner} from "../common/LoadingSpinner";
 import {QuizSummaryItem} from "./QuizSummaryItem";
 import {QuizSummaryForm} from "./QuizSummaryForm";
 
-export class QuizSummary extends React.Component {
+import {summaryGet} from "../../AC/summary";
+import {itemsSelector} from "../../selectors/summary";
+
+export class QuizSummaryComponent extends React.Component {
+    componentDidMount() {
+        this.props.getSummary();
+    }
 
     render() {
-        const itemsData = [1,2,3];
-        const items = itemsData.map((item) => <QuizSummaryItem key={item}/>);
+        const {itemsData} = this.props;
+        const items = itemsData && itemsData.map((item) => <QuizSummaryItem key={item.id} data={item}/>);
 
         return (
             <div className="tm-main tm-summary">
@@ -19,7 +27,7 @@ export class QuizSummary extends React.Component {
                             <div className="tm-header-divider uk-hidden@s"/>
                             <h1 className="uk-h1">Поздравляем! Ваши финансы почти в порядке</h1>
 
-                            {items}
+                            {items ? items : <LoadingSpinner/>}
 
                             <div className="uk-padding uk-padding-remove-horizontal">
                                 <div className="uk-child-width-1-2@s uk-child-width-1-1 uk-flex-between" data-uk-grid>
@@ -39,3 +47,13 @@ export class QuizSummary extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    itemsData: itemsSelector(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+    getSummary: () => dispatch(summaryGet()),
+});
+
+export const QuizSummary = connect(mapStateToProps, mapDispatchToProps)(QuizSummaryComponent);

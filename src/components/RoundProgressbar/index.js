@@ -3,13 +3,13 @@ import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 import {GradientSVG} from "../common/GradientSVG";
-import {randomId} from "../../utils";
+import {getRandomId} from "../../utils";
 
 import './style.scss';
 
 export const RoundProgressbar = props => {
     const {children, gradient, ...otherProps} = props;
-    const id = gradient && randomId();
+    const id = gradient && getRandomId();
     const styles = gradient ? {
         path: {
             stroke: `url(#${id})`,
