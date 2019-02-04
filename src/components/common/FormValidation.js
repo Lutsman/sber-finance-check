@@ -36,8 +36,8 @@ export class FormValidation extends React.Component {
         })
     };
 
-    handleChange = field => e => {
-        const {value} = e.target;
+    handleChange = (field, formatter) => e => {
+        const value = formatter ? formatter(e.target.value) : e.target.value;
         const length = value.length;
         const max = this.limits[field].max;
 

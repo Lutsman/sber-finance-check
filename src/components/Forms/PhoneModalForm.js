@@ -15,6 +15,7 @@ export class PhoneModalForm extends FormValidation {
     limits = {
         phone: {
             min: 10,
+            max: 10,
         },
     };
 
@@ -39,6 +40,7 @@ export class PhoneModalForm extends FormValidation {
     render() {
         const {submiting} = this.props;
         const {phone} = this.state;
+        const formatter = val => val.replace(/(\s|_|\(|\)|-)/g, '');
 
         return (
             <div className="tm-final uk-text-center uk-flex uk-flex-center">
@@ -54,13 +56,13 @@ export class PhoneModalForm extends FormValidation {
                                 type="text"
                                 mask="(111) 111-1111"
                                 value={phone}
-                                onChange={this.handleChange('phone')}
+                                onChange={this.handleChange('phone', formatter)}
                             />
                         </div>
                         <div className="uk-flex uk-flex-column uk-flex-middle uk-child-width-1-2@s">
                             <button
                                 className="tm-border-rounded uk-button uk-button-primary"
-                                disabled={submiting}>
+                                disabled={!this.isValidForm() || submiting}>
                                 Отправить заявку
                                 <span className="tm-icon-arrow">
                                     {submiting ? <LoadingSpinner inline={true}/> : <Svg src={iconArrow}/>}
