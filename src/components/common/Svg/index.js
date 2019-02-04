@@ -13,9 +13,9 @@ export class Svg extends React.Component {
     render() {
         const {src, alt, ...rest} = this.props;
         return (
-            <div className="svg-wrapper">
+            <span className="svg-wrapper">
                 <img src={src} alt={alt} ref={this.image} {...rest} />
-            </div>
+            </span>
         );
     }
 }

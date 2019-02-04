@@ -46,17 +46,16 @@ export class QuizSummaryFormComponent extends React.Component {
     getModalContent() {
         const {onSubmit, formSendComplete, formSendSuccess, formSending} = this.props;
 
-        if (formSendComplete || true) {
+        if (formSendComplete) {
             return (
-                <ModalCompleteForm fail={formSendSuccess} handleClick={this.handleModalClose}>
+                <ModalCompleteForm fail={!formSendSuccess} onSubmit={this.handleModalClose}>
                     {
                         formSendSuccess ?
                             (
                                 <div>
-                                    <h2 className="uk-modal-title uk-margin-top">Что-то пошло не так!</h2>
+                                    <h2 className="uk-modal-title uk-margin-top">Спасибо, ваша заявка принята!</h2>
                                     <p className="tm-text-transparent uk-margin-top">
-                                        В следвствии технических неполадок произошел сбой. Попробуйте отправить заявку
-                                        еще раз.
+                                        Ваш клиентский менеджер свяжется с вами в течении 2 рабочих дней.
                                     </p>
                                 </div>
                             ) :

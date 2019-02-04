@@ -8,11 +8,25 @@ export class FormValidation extends React.Component {
     fields = []; // string[]
 
     isValidField = field => {
-        if (!this.state[field] || !this.limits[field]) return false;
+        const fieldState = this.state[field];
+        const length = fieldState && fieldState.length;
 
-        if (!this.limits[field].min) return true;
+        if (fieldState === undefined || this.limits[field] === undefined) return true;
 
-        return this.state[field].length > this.limits[field].min
+        const {max, min} = this.limits[field];
+
+        if (!min && !max) return true;
+
+        if (min && max) {
+            return min <= length && length <= max;
+        }
+
+        if (min) {
+            return min <= length;
+        }
+
+
+        return length <= max;
     };
 
     isValidForm = () => {
@@ -24,8 +38,10 @@ export class FormValidation extends React.Component {
 
     handleChange = field => e => {
         const {value} = e.target;
+        const length = value.length;
+        const max = this.limits[field].max;
 
-        if (this.limits[field].max && value.length > this.limits[field].max) return;
+        if (max && length > max) return;
 
         this.setState({
             [field]: value,

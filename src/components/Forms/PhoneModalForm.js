@@ -3,25 +3,30 @@ import MaskedInput from 'react-maskedinput';
 
 import {Svg} from "../common/Svg";
 import {LoadingSpinner} from "../common/LoadingSpinner";
+import {FormValidation} from "../common/FormValidation";
 
 import iconArrow from "../../images/icon-arrow.svg";
 
-export class PhoneModalForm extends React.Component {
+export class PhoneModalForm extends FormValidation {
     state = {
         phone: '',
     };
 
-    handleChange = e => {
-        const {value} = e.target;
-
-        this.setState({
-            phone: value,
-        })
+    limits = {
+        phone: {
+            min: 10,
+        },
     };
 
-    handleSubmit = () => {
+    fields = ['phone'];
+
+    handleSubmit = e => {
         const {onSubmit} = this.props;
         const {phone} = this.state;
+
+        e.preventDefault();
+
+        if (!this.isValidForm()) return;
 
         onSubmit(phone);
         this.setState({
@@ -49,7 +54,7 @@ export class PhoneModalForm extends React.Component {
                                 type="text"
                                 mask="(111) 111-1111"
                                 value={phone}
-                                onChange={this.handleChange}
+                                onChange={this.handleChange('phone')}
                             />
                         </div>
                         <div className="uk-flex uk-flex-column uk-flex-middle uk-child-width-1-2@s">
