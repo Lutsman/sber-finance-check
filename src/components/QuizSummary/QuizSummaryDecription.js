@@ -28,9 +28,9 @@ export class QuizSummaryDecription extends React.Component {
                 <Modal open={open} onClose={this.onCloseModal}>
                     <div className="tm-final">
                         <div className="uk-width-2-3@s uk-margin-auto uk-text-center">
-                            <img className="uk-hidden" src="../../images/illustration-budget-bad.png" alt=""/>
-                            <img src={img} alt=""/>
-                            <img className="uk-hidden" src="../../images/illustration-budget-good.png" alt=""/>
+                            <div className="img-wrapper">
+                                <img src={img} width={228} height={228} alt=""/>
+                            </div>
                             <h2 className="uk-modal-title uk-margin-top">{title}</h2>
                             <div
                                 className="uk-margin-large-bottom tm-text-transparent"

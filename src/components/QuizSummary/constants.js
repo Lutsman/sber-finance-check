@@ -51,7 +51,7 @@ export const COLOR_MAP = {
             endColor: '#5A95D0',
             rotation: 90,
         },
-        colorClassName: 'high',
+        colorClassName: 'tm-indicator-level__high',
     },
     medium: {
         gradient: {
@@ -59,7 +59,7 @@ export const COLOR_MAP = {
             endColor: '#AA29FF',
             rotation: 90,
         },
-        colorClassName: 'medium',
+        colorClassName: 'tm-indicator-level__medium',
     },
     low: {
         gradient: {
@@ -67,6 +67,6 @@ export const COLOR_MAP = {
             endColor: '#AA3C51',
             rotation: 90,
         },
-        colorClassName: 'low',
+        colorClassName: 'tm-indicator-level___low',
     },
 };

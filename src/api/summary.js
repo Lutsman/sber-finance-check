@@ -20,13 +20,14 @@ export const getSummary = fields => {
             items: groupScores.map(group => {
                 const {name, value} = group;
                 const {title, subTitle, description, alerts} = guidances[name] || {};
+                const level = getLevel(value);
 
                 return {
                     name,
                     title,
-                    alerts,
+                    alerts: alerts && alerts[level],
                     subTitle,
-                    description: description && description[getLevel(value)],
+                    description: description && description[level],
                     percentage: value,
                 };
             }),
