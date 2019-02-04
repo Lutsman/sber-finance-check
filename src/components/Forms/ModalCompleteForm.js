@@ -7,9 +7,9 @@ export const ModalCompleteForm = props => {
     const {fail, children, onSubmit, buttonValue} = props;
 
     return (
-        <div>
-            <div className="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-flex-center">
-                <div className="uk-width-2-3@s">
+        <div className="tm-modal-small tm-final">
+            <div className="uk-text-center uk-flex uk-flex-center">
+                <div className="uk-width-5-6@s">
                     <div className="img-wrapper">
                         <img src={fail ? successImg : successImg} alt=""/>
                     </div>

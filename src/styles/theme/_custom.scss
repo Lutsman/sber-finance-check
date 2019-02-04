@@ -1003,6 +1003,10 @@ input.radioId:checked + .tm-radio-button {
   }
 }
 
+.tm-modal-small {
+  max-width: 450px;
+}
+
 @media (max-width: 639px) {
   .styles_modal__gNwvD {
     padding: 20px;
