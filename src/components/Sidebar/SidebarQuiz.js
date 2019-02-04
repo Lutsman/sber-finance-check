@@ -7,14 +7,14 @@ import {isCompleteSelector, quizFillingSelector} from "../../selectors/quiz";
 export const SidebarQuizComponent = props => {
     const {percentage, isComplete} = props;
     const getIndicatorContent = () => {
-        if (isComplete) {
-            return (
-                <div className="tm-indicator__content">
-                    Рейтинг ваших финансов:
-                    <span>АА+</span>
-                </div>
-            );
-        }
+        // if (isComplete) {
+        //     return (
+        //         <div className="tm-indicator__content">
+        //             Рейтинг ваших финансов:
+        //             <span>АА+</span>
+        //         </div>
+        //     );
+        // }
 
         if (percentage) {
             return (

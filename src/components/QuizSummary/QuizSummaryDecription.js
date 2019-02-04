@@ -1,8 +1,6 @@
 import * as React from 'react';
 import Modal from "react-responsive-modal";
 
-import budgetNormal from "../../images/illustration-budget-normal.png";
-
 export class QuizSummaryDecription extends React.Component {
     state = {
         open: false,
@@ -17,6 +15,7 @@ export class QuizSummaryDecription extends React.Component {
     };
 
     render() {
+        const {title, content, img} = this.props;
         const {open} = this.state;
 
         return (
@@ -30,18 +29,12 @@ export class QuizSummaryDecription extends React.Component {
                     <div className="tm-final">
                         <div className="uk-width-2-3@s uk-margin-auto uk-text-center">
                             <img className="uk-hidden" src="../../images/illustration-budget-bad.png" alt=""/>
-                            <img src={budgetNormal} alt=""/>
+                            <img src={img} alt=""/>
                             <img className="uk-hidden" src="../../images/illustration-budget-good.png" alt=""/>
-                            <h2 className="uk-modal-title uk-margin-top">Бюджет и расходы</h2>
-                            <div className="uk-margin-large-bottom tm-text-transparent">
-                                <p>
-                                    Откладывая деньги, вы создаёте финансовую подушку безопасности на будущее.
-                                </p>
-                                <p>
-                                    С сервисом <a href="/" className="tm-link-modal">Бюджет</a> в
-                                    Сбербанк Онлайн вы сможете контролировать расходы и начать откладывать
-                                    деньги.
-                                </p>
+                            <h2 className="uk-modal-title uk-margin-top">{title}</h2>
+                            <div
+                                className="uk-margin-large-bottom tm-text-transparent"
+                                dangerouslySetInnerHTML={{__html: content}}>
                             </div>
                             <button
                                 className="uk-modal-close uk-button uk-button-primary"

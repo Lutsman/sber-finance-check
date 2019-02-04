@@ -4,9 +4,9 @@ export const summaryGet = () => ({
     type: SUMMARY_GET,
 });
 
-export const summaryGetSuccess = items => ({
+export const summaryGetSuccess = itemsData => ({
     type: SUMMARY_GET + _SUCCESS,
-    payload: {items},
+    payload: {itemsData},
 });
 
 export const summaryGetFail = error => ({

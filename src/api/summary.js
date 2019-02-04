@@ -1,12 +1,12 @@
 import {guidances, fieldsMap} from "../fixtures";
 import {STEP_TYPE} from "../components/Quiz/constants";
-import {objectToArray} from "../utils";
+import {objectToArrayOfObjects, getLevel} from "../utils";
 
 export const getSummary = fields => {
     return new Promise(resolve => {
-        const groups = calc(fields);
-        const totalScores = groups.reduce((sum, curr, i, arr) => {
-            let result = sum + curr;
+        const groupScores = calc(fields);
+        const totalScores = groupScores.reduce((sum, item, i, arr) => {
+            let result = sum + item.value;
 
             if (i === arr.length - 1) {
                 result /= arr.length;
@@ -16,16 +16,18 @@ export const getSummary = fields => {
         }, 0);
 
         resolve({
-            title: guidances.title[getLevel(totalScores)],
-            items: groups.map(group => {
-                const {title, subTitle, value, description, alerts} = guidances[group.name];
+            title: guidances.title && guidances.title[getLevel(totalScores)],
+            items: groupScores.map(group => {
+                const {name, value} = group;
+                const {title, subTitle, description, alerts} = guidances[name] || {};
 
                 return {
+                    name,
                     title,
                     alerts,
-                    subTitle: `${subTitle} ${value}%`,
-                    description: description[getLevel(value)],
-                    percentage: group.value,
+                    subTitle,
+                    description: description && description[getLevel(value)],
+                    percentage: value,
                 };
             }),
         });
@@ -33,38 +35,41 @@ export const getSummary = fields => {
 };
 
 function calc(fields) {
-    let groups = {};
+    const fieldsArr = objectToArrayOfObjects(fields);
+    const groupedFields = {};
+    let results = [];
 
-    for (const [key, field] of Object.entries(fields)) {
-        const group = groups[field.group] = groups[field.group] ? groups[field.group] : [];
+    for (const field of fieldsArr) {
+        const {group} = fieldsMap[field.name];
+        const groupedField = groupedFields[group] = groupedFields[group] ? groupedFields[group] : [];
         const result = calcField(field);
 
-        group.push(result);
+        groupedField.push(result);
     }
 
-    for (const [key, value] of Object.entries(groups)) {
-        groups = {
-            ...groups,
-            [key]: {
-                value: value.reduce((sum, current, i, arr) => {
-                    const newSum = sum + current;
+    for (const [key, value] of Object.entries(groupedFields)) {
+        results.push({
+            name: key,
+            value: value.reduce((sum, current, i, arr) => {
+                const newSum = sum + current;
 
-                    return i === arr.length - 1 ? newSum / arr.length : newSum
-                }, 0),
-            },
-        };
+                return i === arr.length - 1 ? Math.ceil(newSum / arr.length) : newSum
+            }, 0),
+        });
     }
 
-    return objectToArray(groups, true, 'name');
+    return results;
 }
 
 function calcField(field) {
-    switch (field.type) {
+    const {type, range} = fieldsMap[field.name];
+
+    switch (type) {
         case STEP_TYPE.dual:
         case STEP_TYPE.radio:
             return field.value;
         case STEP_TYPE.checkbox:
-            const count = field.value.length;
+            const count = Object.entries(field.value).length;
 
             if (count === 1) return 10;
             if (count === 2) return 50;
@@ -72,7 +77,7 @@ function calcField(field) {
 
             return 0;
         case STEP_TYPE.vote:
-            const {value, range} = field;
+            const {value} = field;
             const halfRange = range / 2;
 
             if (value > halfRange) {
@@ -81,12 +86,4 @@ function calcField(field) {
 
             return Math.ceil(value / halfRange * 100);
     }
-}
-
-function getLevel(percentage) {
-    if (percentage > 65) return 'high';
-
-    if (percentage > 35) return 'medium';
-
-    return 'low';
 }

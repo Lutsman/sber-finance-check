@@ -1,5 +1,5 @@
 export const isEmptyObj = obj => {
-    for(const [, value] of Object.entries(obj)) {
+    for (const [, value] of Object.entries(obj)) {
         if (value) return false;
     }
 
@@ -20,3 +20,20 @@ export const objectToArray = (obj, addKey, keyName = 'key') => {
     return arr;
 };
 
+export const objectToArrayOfObjects = (obj, keyName = 'name', keyValue = 'value') => {
+    let arr = [];
+
+    for (const [key, value] of Object.entries(obj)) {
+        arr.push({[keyName]: key, [keyValue]: value});
+    }
+
+    return arr;
+};
+
+export const getLevel = percentage => {
+    if (percentage > 65) return 'high';
+
+    if (percentage > 35) return 'medium';
+
+    return 'low';
+};

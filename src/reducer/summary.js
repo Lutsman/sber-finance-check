@@ -1,7 +1,7 @@
 import {SUMMARY_GET, _SUCCESS, _FAIL} from "../constants";
 
 export const INITIAL_STATE = {
-    items: null,
+    itemsData: null,
     errors: [],
 };
 
@@ -12,7 +12,7 @@ export default (state = INITIAL_STATE, action) => {
         case SUMMARY_GET + _SUCCESS:
             return {
                 ...state,
-                items: payload.items,
+                itemsData: payload.itemsData,
             };
         case SUMMARY_GET + _FAIL:
             return {

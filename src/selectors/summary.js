@@ -1,1 +1,1 @@
-export const itemsSelector = state => state.summary.items;
+export const itemsDataSelector = state => state.summary.itemsData;

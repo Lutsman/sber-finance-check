@@ -7,7 +7,6 @@ export class Svg extends React.Component {
     image = React.createRef();
 
     componentDidMount() {
-        console.dir(this.image);
         UIkit.svg(this.image.current);
     }
 

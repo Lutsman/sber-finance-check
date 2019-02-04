@@ -6,7 +6,7 @@ import {QuizSummaryItem} from "./QuizSummaryItem";
 import {QuizSummaryForm} from "./QuizSummaryForm";
 
 import {summaryGet} from "../../AC/summary";
-import {itemsSelector} from "../../selectors/summary";
+import {itemsDataSelector} from "../../selectors/summary";
 
 export class QuizSummaryComponent extends React.Component {
     componentDidMount() {
@@ -15,7 +15,8 @@ export class QuizSummaryComponent extends React.Component {
 
     render() {
         const {itemsData} = this.props;
-        const items = itemsData && itemsData.map((item) => <QuizSummaryItem key={item.id} data={item}/>);
+        const {title, items} = itemsData || {};
+        const itemsList = items && items.map((item) => <QuizSummaryItem key={item.id} data={item}/>);
 
         return (
             <div className="tm-main tm-summary">
@@ -25,9 +26,9 @@ export class QuizSummaryComponent extends React.Component {
                         <div className="tm-final uk-container">
                             <div className="tm-text-transparent uk-margin-top">Результат финансового сканирования</div>
                             <div className="tm-header-divider uk-hidden@s"/>
-                            <h1 className="uk-h1">Поздравляем! Ваши финансы почти в порядке</h1>
+                            <h1 className="uk-h1">{title}</h1>
 
-                            {items ? items : <LoadingSpinner/>}
+                            {itemsList ? itemsList : <LoadingSpinner/>}
 
                             <div className="uk-padding uk-padding-remove-horizontal">
                                 <div className="uk-child-width-1-2@s uk-child-width-1-1 uk-flex-between" data-uk-grid>
@@ -49,7 +50,7 @@ export class QuizSummaryComponent extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    itemsData: itemsSelector(state),
+    itemsData: itemsDataSelector(state),
 });
 
 const mapDispatchToProps = dispatch => ({

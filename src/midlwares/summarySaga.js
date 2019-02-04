@@ -9,9 +9,12 @@ import {getRandomId} from "../utils";
 export function* loadSummary() {
     const fileds = yield select(dataSelector);
     try {
-        let items = call(getSummary, fileds);
-        items = items.map( item => ({...item, id: getRandomId()}));
-        yield put(summaryGetSuccess(items));
+        const itemsData = yield call(getSummary, fileds);
+        const proceedData = {
+            ...itemsData,
+            items: itemsData.items.map( item => ({...item, id: getRandomId()}))
+        };
+        yield put(summaryGetSuccess(proceedData));
     } catch (error) {
         yield put(summaryGetFail(error));
     }
