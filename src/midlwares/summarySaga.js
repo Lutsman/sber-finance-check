@@ -6,11 +6,10 @@ import {dataSelector} from "../selectors/quiz";
 import {getSummary} from "../api/summary";
 import {getRandomId} from "../utils";
 
-export function* loadSummary(...rest) {
-    console.dir(rest);
-    const fileds = yield select(dataSelector);
+export function* loadSummary() {
+    const fields = yield select(dataSelector);
     try {
-        const itemsData = yield call(getSummary, fileds);
+        const itemsData = yield call(getSummary, fields);
         const proceedData = {
             ...itemsData,
             items: itemsData.items.map( item => ({...item, id: getRandomId()}))

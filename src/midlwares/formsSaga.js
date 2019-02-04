@@ -16,5 +16,5 @@ export function* formsSendPhoneSaga(action) {
 }
 
 export default function* () {
-    takeLatest(FORMS_PHONE_SEND, formsSendPhoneSaga);
+    yield takeLatest(FORMS_PHONE_SEND, formsSendPhoneSaga);
 }

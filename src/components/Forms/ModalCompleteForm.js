@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import successImg from '../../images/modal-success.png';
-import failImg from '../../images/modal-fail.png';
+// import failImg from '../../images/modal-fail.png';
 
 export const ModalCompleteForm = props => {
     const {fail, children, onSubmit, buttonValue} = props;
@@ -11,7 +11,7 @@ export const ModalCompleteForm = props => {
             <div className="uk-modal-dialog uk-modal-body uk-text-center uk-flex uk-flex-center">
                 <div className="uk-width-2-3@s">
                     <div className="img-wrapper">
-                        <img src={fail ? failImg : successImg} alt=""/>
+                        <img src={fail ? successImg : successImg} alt=""/>
                     </div>
                     {children}
                     <div>

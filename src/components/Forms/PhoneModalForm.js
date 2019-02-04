@@ -1,6 +1,8 @@
 import * as React from 'react';
+import MaskedInput from 'react-maskedinput';
 
 import {Svg} from "../common/Svg";
+import {LoadingSpinner} from "../common/LoadingSpinner";
 
 import iconArrow from "../../images/icon-arrow.svg";
 
@@ -9,7 +11,28 @@ export class PhoneModalForm extends React.Component {
         phone: '',
     };
 
-    render () {
+    handleChange = e => {
+        const {value} = e.target;
+
+        this.setState({
+            phone: value,
+        })
+    };
+
+    handleSubmit = () => {
+        const {onSubmit} = this.props;
+        const {phone} = this.state;
+
+        onSubmit(phone);
+        this.setState({
+            phone: '',
+        });
+    };
+
+    handleClose = () => this.props.onClose();
+
+    render() {
+        const {submiting} = this.props;
         const {phone} = this.state;
 
         return (
@@ -21,16 +44,28 @@ export class PhoneModalForm extends React.Component {
                             <div className="tm-text-transparent tm-font-tiny uk-margin-small-bottom">
                                 Номер телефона
                             </div>
-                            <input
+                            <MaskedInput
                                 className="uk-input"
                                 type="text"
+                                mask="(111) 111-1111"
                                 value={phone}
-                                onChange={this.handleChange}/>
+                                onChange={this.handleChange}
+                            />
                         </div>
                         <div className="uk-flex uk-flex-column uk-flex-middle uk-child-width-1-2@s">
-                            <button className="tm-border-rounded uk-button uk-button-primary">
+                            <button
+                                className="tm-border-rounded uk-button uk-button-primary"
+                                disabled={submiting}>
                                 Отправить заявку
-                                <Svg className="tm-icon-arrow" src={iconArrow}/>
+                                <span className="tm-icon-arrow">
+                                    {submiting ? <LoadingSpinner inline={true}/> : <Svg src={iconArrow}/>}
+                                </span>
+                            </button>
+                            <button
+                                className="tm-button-modal-close uk-button uk-button-default uk-margin-top"
+                                onClick={this.handleClose}
+                                type="button">
+                                Закрыть
                             </button>
                         </div>
                     </form>
@@ -38,22 +73,4 @@ export class PhoneModalForm extends React.Component {
             </div>
         );
     }
-
-    handleChange = e => {
-        const {value} = e.target;
-
-        this.setState({
-            phone: value,
-        })
-    };
-
-    handleSubmit = () => {
-      const {onSubmit} = this.props;
-      const {phone} = this.state;
-
-      onSubmit(phone);
-      this.setState({
-          phone: '',
-      });
-    };
-};
+}

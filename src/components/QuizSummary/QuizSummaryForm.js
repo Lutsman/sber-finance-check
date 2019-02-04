@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {connect} from 'react-redux';
 import Modal from "react-responsive-modal";
 
 import {Svg} from "../common/Svg";
@@ -6,11 +7,12 @@ import {PhoneModalForm} from "../Forms/PhoneModalForm";
 import {ModalCompleteForm} from "../Forms/ModalCompleteForm";
 
 import iconArrow from "../../images/icon-arrow.svg";
+import {formsSendPhone, formsSendPhoneReset} from "../../AC/forms";
+import {phoneSendingSelector, phoneSendCompleteSelector, phoneSendSuccessSelector} from "../../selectors/forms";
 
-export class QuizSummaryForm extends React.Component {
+export class QuizSummaryFormComponent extends React.Component {
     state = {
         open: false,
-        phone: '',
     };
 
     handleModalOpen = () => {
@@ -18,6 +20,7 @@ export class QuizSummaryForm extends React.Component {
     };
 
     handleModalClose = () => {
+        this.props.resetForm();
         this.setState({open: false});
     };
 
@@ -41,13 +44,13 @@ export class QuizSummaryForm extends React.Component {
     }
 
     getModalContent() {
-        const {onSubmit, sendFormComplete, sendFormSuccess} = this.props;
+        const {onSubmit, formSendComplete, formSendSuccess, formSending} = this.props;
 
-        if (sendFormComplete) {
+        if (formSendComplete) {
             return (
-                <ModalCompleteForm fail={sendFormSuccess} handleClick={this.handleModalClose}>
+                <ModalCompleteForm fail={formSendSuccess} handleClick={this.handleModalClose}>
                     {
-                        sendFormSuccess ?
+                        formSendSuccess ?
                             (
                                 <div>
                                     <h2 className="uk-modal-title uk-margin-top">Что-то пошло не так!</h2>
@@ -71,6 +74,19 @@ export class QuizSummaryForm extends React.Component {
             );
         }
 
-        return (<PhoneModalForm onSubmit={onSubmit}/>);
+        return (<PhoneModalForm onClose={this.handleModalClose} onSubmit={onSubmit} submiting={formSending}/>);
     }
 }
+
+const mapStateToProps = state => ({
+    formSending: phoneSendingSelector(state),
+    formSendComplete: phoneSendCompleteSelector(state),
+    formSendSuccess: phoneSendSuccessSelector(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+    onSubmit: phone => dispatch(formsSendPhone(phone)),
+    resetForm: () => dispatch(formsSendPhoneReset()),
+});
+
+export const QuizSummaryForm = connect(mapStateToProps, mapDispatchToProps)(QuizSummaryFormComponent);

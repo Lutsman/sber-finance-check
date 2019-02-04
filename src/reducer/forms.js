@@ -2,8 +2,8 @@ import {FORMS_PHONE_SEND, _SUCCESS, _FAIL, FORMS_PHONE_SEND_RESET} from "../cons
 
 export const INITIAL_STATE = {
     phoneSending: false,
-    phoneSentComplete: false,
-    phoneSentSuccess: false,
+    phoneSendComplete: false,
+    phoneSendSuccess: false,
     errors: [],
 };
 
@@ -20,15 +20,15 @@ export default (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 phoneSending: false,
-                phoneSentComplete: true,
-                phoneSentSuccess: true,
+                phoneSendComplete: true,
+                phoneSendSuccess: true,
             };
         case FORMS_PHONE_SEND + _FAIL:
             return {
                 ...state,
                 phoneSending: false,
-                phoneSentComplete: true,
-                phoneSentSuccess: false,
+                phoneSendComplete: true,
+                phoneSendSuccess: false,
                 errors: [...state.errors, payload.error],
             };
         case FORMS_PHONE_SEND_RESET:

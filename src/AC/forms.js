@@ -1,6 +1,6 @@
 import {FORMS_PHONE_SEND, _SUCCESS, _FAIL, FORMS_PHONE_SEND_RESET} from "../constants";
 
-export const fromsSendPhone = phone => ({
+export const formsSendPhone = phone => ({
     type: FORMS_PHONE_SEND,
     payload: {phone},
 });
@@ -14,6 +14,6 @@ export const formsSendPhoneFail = error => ({
     payload: {error},
 });
 
-export const fromsSendPhoneReset = () => ({
+export const formsSendPhoneReset = () => ({
     type: FORMS_PHONE_SEND_RESET,
 });
