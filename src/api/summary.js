@@ -59,7 +59,18 @@ function calc(fields) {
         });
     }
 
-    return results;
+    return results.map(result => {
+        const getValue = () => {
+            if (result.value > 66) return 90;
+            if (result.value > 33) return 45;
+            return 10;
+        };
+
+        return {
+            ...result,
+            value: getValue(),
+        };
+    });
 }
 
 function calcField(field) {

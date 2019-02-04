@@ -6,7 +6,8 @@ import {dataSelector} from "../selectors/quiz";
 import {getSummary} from "../api/summary";
 import {getRandomId} from "../utils";
 
-export function* loadSummary() {
+export function* loadSummary(...rest) {
+    console.dir(rest);
     const fileds = yield select(dataSelector);
     try {
         const itemsData = yield call(getSummary, fileds);

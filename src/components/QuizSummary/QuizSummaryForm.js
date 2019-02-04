@@ -5,7 +5,8 @@ import Modal from "react-responsive-modal";
 
 export class QuizSummaryForm extends React.Component {
     state = {
-        open: false
+        open: false,
+        phone: '',
     };
 
     onOpenModal = () => {

@@ -12,3 +12,8 @@ export const QUIZ_DATA_SET = 'sber/quiz/QUIZ_DATA_SET';
 
 //summary
 export const SUMMARY_GET = 'SUMMARY_GET';
+
+
+//forms
+export const FORMS_PHONE_SEND = 'FORMS_PHONE_SEND';
+export const FORMS_PHONE_SEND_RESET = 'FORMS_PHONE_SEND_RESET';
