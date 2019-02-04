@@ -7,7 +7,7 @@ export const INITIAL_STATE = {
     activeStep: 0,
     lastApprovedStep: -1,
     data: {},
-    isComplete: false,
+    isComplete: true,
     history: [],
     steps: steps || [],
 };

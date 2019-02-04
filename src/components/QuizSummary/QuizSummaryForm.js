@@ -46,7 +46,7 @@ export class QuizSummaryFormComponent extends React.Component {
     getModalContent() {
         const {onSubmit, formSendComplete, formSendSuccess, formSending} = this.props;
 
-        if (formSendComplete) {
+        if (formSendComplete || true) {
             return (
                 <ModalCompleteForm fail={formSendSuccess} handleClick={this.handleModalClose}>
                     {
