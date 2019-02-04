@@ -6,11 +6,11 @@ export class QuizSummaryDecription extends React.Component {
         open: false,
     };
 
-    onOpenModal = () => {
+    handleModalOpen = () => {
         this.setState({open: true});
     };
 
-    onCloseModal = () => {
+    handleModalClose = () => {
         this.setState({open: false});
     };
 
@@ -22,10 +22,10 @@ export class QuizSummaryDecription extends React.Component {
             <div>
                 <button
                     className="tm-button-details uk-button uk-button-default uk-width-auto@s"
-                    onClick={this.onOpenModal}>
+                    onClick={this.handleModalOpen}>
                     Подробнее
                 </button>
-                <Modal open={open} onClose={this.onCloseModal}>
+                <Modal open={open} onClose={this.handleModalClose}>
                     <div className="tm-final">
                         <div className="uk-width-2-3@s uk-margin-auto uk-text-center">
                             <div className="img-wrapper">
@@ -38,7 +38,7 @@ export class QuizSummaryDecription extends React.Component {
                             </div>
                             <button
                                 className="uk-modal-close uk-button uk-button-primary"
-                                onClick={this.onCloseModal}>
+                                onClick={this.handleModalClose}>
                                 Закрыть
                             </button>
                         </div>
