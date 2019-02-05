@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Modal from "react-responsive-modal";
+import {Modal} from "../Modal";
 
 export class QuizSummaryDecription extends React.Component {
     state = {
@@ -26,7 +26,7 @@ export class QuizSummaryDecription extends React.Component {
                     Подробнее
                 </button>
                 <Modal open={open} onClose={this.handleModalClose}>
-                    <div className="tm-final">
+                    <div className="tm-modal-description">
                         <div className="uk-width-2-3@s uk-margin-auto uk-text-center">
                             <div className="img-wrapper">
                                 <img src={img} width={228} height={228} alt=""/>

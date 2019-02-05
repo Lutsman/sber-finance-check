@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {LoadingSpinner} from "../common/LoadingSpinner";
+import {LoadingSpinner} from "../common/LoadingSpinner/index";
 import {QuizSummaryItem} from "./QuizSummaryItem";
 import {QuizSummaryForm} from "./QuizSummaryForm";
 
@@ -23,7 +23,7 @@ export class QuizSummaryComponent extends React.Component {
                 <div className="tm-content-wrapper uk-flex uk-flex-wrap uk-flex-stretch">
 
                     <div className="tm-content">
-                        <div className="tm-final uk-container">
+                        <div className="uk-container">
                             <div className="tm-text-transparent uk-margin-top">Результат финансового сканирования</div>
                             <div className="tm-header-divider uk-hidden@s"/>
                             <h1 className="uk-h1">{title}</h1>

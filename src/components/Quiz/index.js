@@ -8,9 +8,10 @@ import {
     dataSelector, isCompleteSelector,
     nextStepDisableSelector,
     prevStepDisableSelector,
-    quizItemSelector,
+    quizItemSelector, stepsLoadingSelector,
+    stepsLoadedSelector,
 } from "../../selectors/quiz";
-import {activeStepApprove, activeStepSet, dataSet, init} from "../../AC/quiz";
+import {activeStepApprove, activeStepSet, dataSet, init, stepsLoad} from "../../AC/quiz";
 import {QuizSummary} from "../QuizSummary";
 
 export const QuizContainerComponent = props => {
@@ -18,6 +19,8 @@ export const QuizContainerComponent = props => {
 };
 
 const mapStateToProps = state => ({
+    stepsLoading: stepsLoadingSelector(state),
+    stepsLoaded: stepsLoadedSelector(state),
     isApproved: approveSelector(state),
     activeStepIndex: activeStepIndexSelector(state),
     activeStep: activeStepSelector(state),
@@ -29,6 +32,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+    loadSteps: () => dispatch(stepsLoad()),
     setApprove: approve => dispatch(activeStepApprove(approve)),
     setData: data => dispatch(dataSet(data)),
     setActiveStep: step => dispatch(activeStepSet(step)),

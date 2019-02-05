@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import people from "../../images/people.png";
+import people from "../../assets/images/people.png";
 
 export const FactsComponent = props => {
   return (

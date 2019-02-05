@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {LineProgressbar} from "../LineProgressbar";
+import {LineProgressbar} from "../LineProgressbar/index";
 
-import {quizFillingSelector} from "../../selectors/quiz";
+import {quizFillingSelector} from "../../../selectors/quiz";
 
 export const MobileProgressbarComponent = props => (
     <div className="tm-progressbar-mobile">

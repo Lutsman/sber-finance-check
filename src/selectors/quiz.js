@@ -12,9 +12,11 @@ export const nextStepDisableSelector = state => state.quiz.activeStep > state.qu
 export const dataSelector = state => state.quiz.data;
 export const isCompleteSelector = state => state.quiz.isComplete;
 export const stepsSelector = state => state.quiz.steps;
+export const stepsLoadingSelector = state => state.quiz.stepsLoading;
+export const stepsLoadedSelector = state => state.quiz.stepsLoaded;
 export const lastApprovedStepSelector = state => state.quiz.lastApprovedStep;
 
-export const quizFillingSelector = createSelector(lastApprovedStepSelector, stepsSelector, (lastApprovedStepIndex, steps) => Math.round((lastApprovedStepIndex + 1) / steps.length * 100));
+export const quizFillingSelector = createSelector(lastApprovedStepSelector, stepsSelector, (lastApprovedStepIndex, steps) => steps.length > 0 ? Math.round((lastApprovedStepIndex + 1) / steps.length * 100) : 0);
 export const prevStepDisableSelector = createSelector(activeStepIndexSelector, stepsSelector, (activeStepIndex, steps) => activeStepIndex === 0 || activeStepIndex === steps.length - 1);
 export const activeStepSelector = createSelector(activeStepIndexSelector, stepsSelector, (activeStepIndex, steps) => steps[activeStepIndex]);
 export const  quizItemSelector = createSelector(activeStepSelector, step => {

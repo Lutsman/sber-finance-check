@@ -1,3 +1,3 @@
-export const postData = (url, data) => new Promise(resolve => {
-    setTimeout(() => resolve(), 2000);
+export const postData = (url, data, resolveData) => new Promise(resolve => {
+    setTimeout(() => resolve(resolveData), 2000);
 });

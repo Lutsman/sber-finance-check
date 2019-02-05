@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {init} from "../../AC/quiz";
 
-import btnPower from "../../images/btn-power.png";
-import btnFingerprint from "../../images/btn-fingerprint.png";
+import btnPower from "../../assets/images/btn-power.png";
+import btnFingerprint from "../../assets/images/btn-fingerprint.png";
 
 export const QuizStartComponent = props => {
     const {quizInit} = props;

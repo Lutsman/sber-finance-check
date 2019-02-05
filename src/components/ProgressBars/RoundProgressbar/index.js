@@ -2,8 +2,8 @@ import * as React from 'react';
 import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-import {GradientSVG} from "../common/GradientSVG";
-import {getRandomId} from "../../utils";
+import {GradientSVG} from "../../common/GradientSVG";
+import {getRandomId} from "../../../utils/index";
 
 import './style.scss';
 

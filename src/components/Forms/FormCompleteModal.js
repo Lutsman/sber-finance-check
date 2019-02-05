@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import successImg from '../../images/modal-success.png';
+import successImg from '../../assets/images/modal-success.png';
 // import failImg from '../../images/modal-fail.png';
 
-export const ModalCompleteForm = props => {
+export const FormCompleteModal = props => {
     const {fail, children, onSubmit, buttonValue} = props;
 
     return (
-        <div className="tm-modal-small tm-final">
+        <div className="tm-modal-small">
             <div className="uk-text-center uk-flex uk-flex-center">
                 <div className="uk-width-5-6@s">
                     <div className="img-wrapper">

@@ -2,12 +2,12 @@ import * as React from 'react';
 import MaskedInput from 'react-maskedinput';
 
 import {Svg} from "../common/Svg";
-import {LoadingSpinner} from "../common/LoadingSpinner";
+import {LoadingSpinner} from "../common/LoadingSpinner/index";
 import {FormValidation} from "../common/FormValidation";
 
-import iconArrow from "../../images/icon-arrow.svg";
+import iconArrow from "../../assets/images/icon-arrow.svg";
 
-export class PhoneModalForm extends FormValidation {
+export class FormPhoneModal extends FormValidation {
     state = {
         phone: '',
     };
@@ -43,7 +43,7 @@ export class PhoneModalForm extends FormValidation {
         const formatter = val => val.replace(/(\s|_|\(|\)|-)/g, '');
 
         return (
-            <div className="tm-final uk-text-center uk-flex uk-flex-center">
+            <div className="tm-modal-small uk-text-center uk-flex uk-flex-center">
                 <div className="uk-width-2-3@s uk-margin-top uk-margin-large-top@s">
                     <h2 className="uk-modal-title">Оставьте ваш номер телефона для обратной связи</h2>
                     <form onSubmit={this.handleSubmit}>
@@ -59,21 +59,25 @@ export class PhoneModalForm extends FormValidation {
                                 onChange={this.handleChange('phone', formatter)}
                             />
                         </div>
-                        <div className="uk-flex uk-flex-column uk-flex-middle uk-child-width-1-2@s">
-                            <button
-                                className="tm-border-rounded uk-button uk-button-primary"
-                                disabled={!this.isValidForm() || submiting}>
-                                Отправить заявку
-                                <span className="tm-icon-arrow">
+                        <div className="tm-modal-controls">
+                            <div>
+                                <button
+                                    className="tm-border-rounded uk-button uk-button-primary"
+                                    disabled={!this.isValidForm() || submiting}>
+                                    Отправить заявку
+                                    <span className="tm-button-icon">
                                     {submiting ? <LoadingSpinner inline={true}/> : <Svg src={iconArrow}/>}
                                 </span>
-                            </button>
-                            <button
-                                className="tm-button-modal-close uk-button uk-button-default uk-margin-top"
-                                onClick={this.handleClose}
-                                type="button">
-                                Закрыть
-                            </button>
+                                </button>
+                            </div>
+                            <div>
+                                <button
+                                    className="tm-modal-button-close uk-button uk-button-default"
+                                    onClick={this.handleClose}
+                                    type="button">
+                                    Закрыть
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>

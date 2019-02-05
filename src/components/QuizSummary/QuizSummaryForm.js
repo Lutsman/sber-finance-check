@@ -1,12 +1,12 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import Modal from "react-responsive-modal";
+import {Modal} from "../Modal";
 
 import {Svg} from "../common/Svg";
-import {PhoneModalForm} from "../Forms/PhoneModalForm";
-import {ModalCompleteForm} from "../Forms/ModalCompleteForm";
+import {FormPhoneModal} from "../Forms/FormPhoneModal";
+import {FormCompleteModal} from "../Forms/FormCompleteModal";
 
-import iconArrow from "../../images/icon-arrow.svg";
+import iconArrow from "../../assets/images/icon-arrow.svg";
 import {formsSendPhone, formsSendPhoneReset} from "../../AC/forms";
 import {phoneSendingSelector, phoneSendCompleteSelector, phoneSendSuccessSelector} from "../../selectors/forms";
 
@@ -34,9 +34,9 @@ export class QuizSummaryFormComponent extends React.Component {
                     className="tm-button-order uk-button uk-button-primary"
                     onClick={this.handleModalOpen}>
                     Записаться на консультацию
-                    <Svg className="tm-icon-arrow" src={iconArrow}/>
+                    <Svg className="tm-button-icon" src={iconArrow}/>
                 </button>
-                <Modal open={open} onClose={this.handleModalClose}>
+                <Modal  open={open} onClose={this.handleModalClose}>
                     {this.getModalContent()}
                 </Modal>
             </div>
@@ -48,7 +48,7 @@ export class QuizSummaryFormComponent extends React.Component {
 
         if (formSendComplete) {
             return (
-                <ModalCompleteForm fail={!formSendSuccess} onSubmit={this.handleModalClose}>
+                <FormCompleteModal fail={!formSendSuccess} onSubmit={this.handleModalClose}>
                     {
                         formSendSuccess ?
                             (
@@ -69,11 +69,11 @@ export class QuizSummaryFormComponent extends React.Component {
                                 </div>
                             )
                     }
-                </ModalCompleteForm>
+                </FormCompleteModal>
             );
         }
 
-        return (<PhoneModalForm onClose={this.handleModalClose} onSubmit={onSubmit} submiting={formSending}/>);
+        return (<FormPhoneModal onClose={this.handleModalClose} onSubmit={onSubmit} submiting={formSending}/>);
     }
 }
 

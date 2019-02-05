@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {RoundProgressbar} from "../RoundProgressbar";
+import {RoundProgressbar} from "../ProgressBars/RoundProgressbar";
 import {isCompleteSelector, quizFillingSelector} from "../../selectors/quiz";
 
 export const SidebarQuizComponent = props => {

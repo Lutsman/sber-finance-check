@@ -1,14 +1,14 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import {RoundProgressbar} from "../RoundProgressbar";
+import {RoundProgressbar} from "../ProgressBars/RoundProgressbar";
 import {QuizSummaryDecription} from "./QuizSummaryDecription";
 
 import {getLevel} from "../../utils";
 import {GUIDANCE_MAP, COLOR_MAP} from "./constants";
-import circle10 from '../../images/circle-10.png';
-import circle45 from '../../images/circle-45.png';
-import circle90 from '../../images/circle-90.png';
+import circle10 from '../../assets/images/circle-10.png';
+import circle45 from '../../assets/images/circle-45.png';
+import circle90 from '../../assets/images/circle-90.png';
 
 const getIndicatorImg = num => {
     if (num > 66) return circle90;
