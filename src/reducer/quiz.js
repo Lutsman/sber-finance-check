@@ -8,7 +8,6 @@ import {
     QUIZ_STEPS_LOAD
 } from "../constants";
 import {isEmptyObj} from "../utils";
-import {steps} from "../fixtures";
 
 export const INITIAL_STATE = {
     steps: [],
