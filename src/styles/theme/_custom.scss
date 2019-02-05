@@ -1012,6 +1012,12 @@ input.radioId:checked + .tm-radio-button {
   }
 }
 
+.tm-modal-controls {
+  button {
+    min-width: 185px;
+  }
+}
+
 @media (max-width: 639px) {
   .tm-modal {
     padding: 20px;

@@ -44,8 +44,8 @@ export class FormPhoneModal extends FormValidation {
 
         return (
             <div className="tm-modal-small uk-text-center uk-flex uk-flex-center">
-                <div className="uk-width-2-3@s uk-margin-top uk-margin-large-top@s">
-                    <h2 className="uk-modal-title">Оставьте ваш номер телефона для обратной связи</h2>
+                <div className="uk-margin-top uk-margin-large-top@s">
+                    <h2 className="uk-modal-title uk-margin-bottom">Оставьте ваш номер телефона для обратной связи</h2>
                     <form onSubmit={this.handleSubmit}>
                         <div className="uk-margin-medium-top@s uk-margin-large-bottom uk-text-left">
                             <div className="tm-text-transparent tm-font-tiny uk-margin-small-bottom">
@@ -60,7 +60,7 @@ export class FormPhoneModal extends FormValidation {
                             />
                         </div>
                         <div className="tm-modal-controls">
-                            <div>
+                            <div className="uk-margin-bottom">
                                 <button
                                     className="tm-border-rounded uk-button uk-button-primary"
                                     disabled={!this.isValidForm() || submiting}>
