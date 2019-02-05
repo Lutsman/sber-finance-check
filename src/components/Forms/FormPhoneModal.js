@@ -52,7 +52,7 @@ export class FormPhoneModal extends FormValidation {
                                 Номер телефона
                             </div>
                             <MaskedInput
-                                className="uk-input"
+                                className="uk-input uk-text-large"
                                 type="text"
                                 mask="(111) 111-1111"
                                 value={phone}
