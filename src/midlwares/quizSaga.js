@@ -32,7 +32,6 @@ export function* quizStepSendSaga(step, data) {
         id,
         value: {...data},
     };
-    debugger;
 
     try {
         const response = yield call(sendStep, stepData);

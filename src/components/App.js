@@ -12,7 +12,7 @@ export class App extends Component {
             <div className="uk-child-width-expand uk-height-viewport uk-flex uk-flex-stretch">
 
                 <Switch>
-                    <Redirect from="/" exact to="/start/1"/>
+                    <Redirect from="/" exact to="/start/111001"/>
                     <Route path="/start/:id" component={Start} />
                     <Route path="/inner" component={Inner} />
                 </Switch>

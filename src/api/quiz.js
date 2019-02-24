@@ -4,4 +4,4 @@ import {steps} from "../fixtures";
 
 export const loadSteps = () => postData(null, null, steps);
 
-export const sendStep = data => axios.post(baseUrl + '/step', data);
+export const sendStep = data => axios.post(baseUrl + '/step', {}, {params: data});
