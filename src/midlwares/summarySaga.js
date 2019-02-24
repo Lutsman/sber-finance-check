@@ -1,4 +1,4 @@
-import {call, put, select, takeLatest, takeEvery} from 'redux-saga/effects';
+import {call, put, select, takeLatest} from 'redux-saga/effects';
 
 import {summaryGetSuccess, summaryGetFail} from "../AC/summary";
 import {SUMMARY_GET} from "../constants";

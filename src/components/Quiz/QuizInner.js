@@ -10,7 +10,7 @@ import iconArrow from "../../assets/images/icon-arrow.svg";
 
 export class QuizInner extends React.Component {
     componentDidMount() {
-        const {loadSteps, stepsLoading, stepsLoaded} = this.props;
+        const {loadSteps, stepsLoading, stepsLoaded, get} = this.props;
 
         if (stepsLoading || stepsLoaded) return;
 

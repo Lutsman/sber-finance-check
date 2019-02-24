@@ -1,4 +1,13 @@
-import {QUIZ_ACTIVE_STEP_APPROVE, QUIZ_ACTIVE_STEP_SET, QUIZ_DATA_SET, QUIZ_INIT, QUIZ_STEPS_LOAD, _SUCCESS, _FAIL} from "../constants";
+import {
+    QUIZ_ACTIVE_STEP_APPROVE,
+    QUIZ_ACTIVE_STEP_SET,
+    QUIZ_DATA_SET,
+    QUIZ_INIT,
+    QUIZ_STEPS_LOAD,
+    _SUCCESS,
+    _FAIL,
+    QUIZ_STEP_SEND,
+} from "../constants";
 
 export const init = () => ({
     type: QUIZ_INIT,
@@ -31,4 +40,19 @@ export const activeStepApprove = approve => ({
 export const dataSet = data => ({
     type: QUIZ_DATA_SET,
     payload: {data},
+});
+
+export const stepSend = data => ({
+    type: QUIZ_STEP_SEND,
+    payload: {data},
+});
+
+export const stepSendSuccess = data => ({
+    type: QUIZ_STEP_SEND,
+    payload: {data},
+});
+
+export const stepSendFail = error => ({
+    type: QUIZ_STEP_SEND,
+    payload: {error},
 });
