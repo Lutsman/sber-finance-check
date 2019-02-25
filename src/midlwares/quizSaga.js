@@ -1,6 +1,6 @@
 import {call, put, take, takeEvery, takeLatest, select} from 'redux-saga/effects';
 
-import {loadSteps, sendStep} from "../api/quiz";
+import {loadSteps, postStep} from "../api/quiz";
 import {QUIZ_STEPS_LOAD, QUIZ_DATA_SET, QUIZ_ACTIVE_STEP_SET, QUIZ_STEP_SEND} from "../constants";
 import {stepsLoadFail, stepsLoadSuccess, stepSend, stepSendSuccess, stepSendFail} from "../AC/quiz";
 import {userIdSelector, sessionIdSelector} from "../selectors/user";
@@ -20,21 +20,22 @@ export function* quizDataSetSaga(action) {
     const step = yield select(activeStepIndexSelector);
 
     yield take(QUIZ_ACTIVE_STEP_SET);
-    yield call(quizStepSendSaga, step, data);
+    yield put(stepSend(step, data));
 }
 
-export function* quizStepSendSaga(step, data) {
+export function* quizStepSendSaga(action) {
+    const {step, data} = action.payload;
     const id = yield select(userIdSelector);
-    const sesionId = yield select(sessionIdSelector);
+    const sessionId = yield select(sessionIdSelector);
     const stepData = {
         step,
-        sesionId,
+        sessionId,
         id,
         value: {...data},
     };
 
     try {
-        const response = yield call(sendStep, stepData);
+        const response = yield call(postStep, stepData);
         yield put(stepSendSuccess(response.data));
     } catch (error) {
         yield put(stepSendFail(error));
@@ -44,5 +45,5 @@ export function* quizStepSendSaga(step, data) {
 export default function* () {
     yield takeEvery(QUIZ_STEPS_LOAD, quizStepsLoadSaga);
     yield takeLatest(QUIZ_DATA_SET, quizDataSetSaga);
-    // yield takeEvery(QUIZ_STEP_SEND, quizStepSendSaga);
+    yield takeEvery(QUIZ_STEP_SEND, quizStepSendSaga);
 }

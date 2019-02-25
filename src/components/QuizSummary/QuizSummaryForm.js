@@ -12,7 +12,7 @@ import {phoneSendingSelector, phoneSendCompleteSelector, phoneSendSuccessSelecto
 
 export class QuizSummaryFormComponent extends React.Component {
     state = {
-        open: true,
+        open: false,
     };
 
     handleModalOpen = () => {
@@ -26,7 +26,6 @@ export class QuizSummaryFormComponent extends React.Component {
 
     render() {
         const {open} = this.state;
-
 
         return (
             <div>

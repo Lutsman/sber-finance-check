@@ -42,17 +42,17 @@ export const dataSet = data => ({
     payload: {data},
 });
 
-export const stepSend = data => ({
+export const stepSend = (step, data) => ({
     type: QUIZ_STEP_SEND,
-    payload: {data},
+    payload: {step, data},
 });
 
 export const stepSendSuccess = data => ({
-    type: QUIZ_STEP_SEND,
+    type: QUIZ_STEP_SEND + _SUCCESS,
     payload: {data},
 });
 
 export const stepSendFail = error => ({
-    type: QUIZ_STEP_SEND,
+    type: QUIZ_STEP_SEND + _FAIL,
     payload: {error},
 });
