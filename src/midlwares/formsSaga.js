@@ -1,7 +1,6 @@
-import {call, put, takeLatest, take, select} from 'redux-saga/effects';
+import {put, takeLatest, take, select, race} from 'redux-saga/effects';
 
-import {FORMS_PHONE_SEND, QUIZ_STEP_SEND, _SUCCESS} from "../constants";
-import {sendPhone} from "../api/forms";
+import {FORMS_PHONE_SEND, QUIZ_STEP_SEND, _SUCCESS, _FAIL} from "../constants";
 import {formsSendPhoneSuccess, formsSendPhoneFail} from "../AC/forms";
 import {stepSend} from "../AC/quiz";
 import {activeStepIndexSelector} from "../selectors/quiz";
@@ -9,17 +8,17 @@ import {activeStepIndexSelector} from "../selectors/quiz";
 export function* formsSendPhoneSaga(action) {
     const {phone} = action.payload;
     const step = yield select(activeStepIndexSelector);
-
     yield put(stepSend(step, {phone}));
-    yield take(QUIZ_STEP_SEND + _SUCCESS);
-    yield put(formsSendPhoneSuccess());
+    const {success, fail} = yield race({
+        success: take(QUIZ_STEP_SEND + _SUCCESS),
+        fail: take(QUIZ_STEP_SEND + _FAIL)
+    });
 
-    // try {
-    //     yield call(sendPhone, phone);
-    //     yield put(formsSendPhoneSuccess());
-    // } catch (error) {
-    //     yield put(formsSendPhoneFail(error));
-    // }
+    if (success) {
+        yield put(formsSendPhoneSuccess());
+    } else {
+        yield put(formsSendPhoneFail(fail.payload.error));
+    }
 }
 
 export default function* () {
