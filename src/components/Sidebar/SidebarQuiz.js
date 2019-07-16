@@ -5,17 +5,8 @@ import {RoundProgressbar} from "../ProgressBars/RoundProgressbar";
 import {isCompleteSelector, quizFillingSelector} from "../../selectors/quiz";
 
 export const SidebarQuizComponent = props => {
-    const {percentage, isComplete} = props;
+    const {percentage} = props;
     const getIndicatorContent = () => {
-        // if (isComplete) {
-        //     return (
-        //         <div className="tm-indicator__content">
-        //             Рейтинг ваших финансов:
-        //             <span>АА+</span>
-        //         </div>
-        //     );
-        // }
-
         if (percentage) {
             return (
                 <div className="tm-indicator__content">

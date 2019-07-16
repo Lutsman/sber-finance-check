@@ -97,5 +97,7 @@ function calcField(field) {
             }
 
             return Math.ceil(value / halfRange * 100);
+        default:
+            return 0;
     }
 }

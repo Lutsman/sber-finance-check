@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {connect} from 'react-redux';
 
 import {RoundProgressbar} from "../ProgressBars/RoundProgressbar";
 import {QuizSummaryDecription} from "./QuizSummaryDecription";

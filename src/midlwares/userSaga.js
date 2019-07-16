@@ -15,7 +15,7 @@ export function* userGetSaga(action) {
 
     try {
         const response = yield call(getUserName, id);
-        yield put(userGetSuccess({name: response.data || 'уважаемый пользователь'}));
+        yield put(userGetSuccess({name: response.data.name || 'уважаемый пользователь'}));
     } catch (error) {
         yield put(userGetFail(error));
     }

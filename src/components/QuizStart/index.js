@@ -49,8 +49,8 @@ export class QuizStartComponent extends React.Component {
                                         <div className="uk-flex uk-flex-center">
                                             <div className="tm-button-start-wrapper">
                                                 <Link to="/inner" onClick={quizInit} className="tm-button-start uk-button">
-                                                    <img className="uk-border-circle uk-visible@s" src={btnPower}/>
-                                                    <img className="uk-border-circle uk-hidden@s" src={btnFingerprint}/>
+                                                    <img className="uk-border-circle uk-visible@s" src={btnPower} alt="btn power"/>
+                                                    <img className="uk-border-circle uk-hidden@s" src={btnFingerprint} alt="fingerprint"/>
                                                 </Link>
                                             </div>
                                         </div>
